@@ -1,17 +1,35 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import { fetchAllTasks } from '@/api/tasksApi'
+import { fetchAllTasks, createTask, deleteSingleTask } from '@/api/tasksApi'
 
 export const useTasksStore = defineStore('tasks', () => {
   // State
   const tasks = ref([])
 
-  // Getters
-
   // Actions
-  function fetchTasks() {
+  async function fetchTasks() {
     try {
-      tasks.value = fetchAllTasks()
+      const data = await fetchAllTasks()      
+      console.log(data)
+      tasks.value = data
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  async function createNewTask(task) {
+    try {
+      await createTask(task)
+    
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  async function deleteTask(task) {
+    try {
+      await deleteSingleTask(task)
+      await fetchTasks() // Actualizar la lista de tareas después de la eliminación
     } catch (error) {
       console.error(error)
     }
@@ -20,8 +38,10 @@ export const useTasksStore = defineStore('tasks', () => {
   return {
     // State
     tasks,
-    // Getters
     // Actions
-    fetchTasks
+    fetchTasks,
+    createNewTask,
+    deleteTask,
+
   }
 })

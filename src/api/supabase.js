@@ -1,7 +1,7 @@
 const API_KEY =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndwenJhc2xod2R2ZG9pa2FrdWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA4NzkwMzMsImV4cCI6MjAyNjQ1NTAzM30.nqfuLRg_URrz3x0fMBw3CPj1YV9QCdedHkNief23aU4'
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5pbmR4cm1pcmpvZGdmYXBuaWpyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTE0NTA1NDAsImV4cCI6MjAyNzAyNjU0MH0.dyoc54C3hioQwLoR9cEBJIqjD9E3p5HLQ3a1MPrQMqc'
 
-const PROJECT_URL = 'https://wpzraslhwdvdoikakufh.supabase.co'
+const PROJECT_URL = 'https://nindxrmirjodgfapnijr.supabase.co'
 
 import { createClient } from '@supabase/supabase-js'
 

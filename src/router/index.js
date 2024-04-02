@@ -30,13 +30,13 @@ const router = createRouter({
   ]
 })
 
-router.beforeEach(async (to, from, next) => {
+/*router.beforeEach(async (to, from, next) => {
   if (to.meta.requiresAuth) {
     await getUser(next)
   } else {
     next()
   }
-})
+})*/
 
 export default router
 

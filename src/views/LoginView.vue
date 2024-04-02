@@ -10,6 +10,8 @@ const password = ref('')
 const signIn = () => {
 	userStore.signIn(user.value, password.value)
 }
+
+
 </script>
 
 <template>
@@ -30,3 +32,4 @@ const signIn = () => {
 
 <style scoped>
 </style>
+

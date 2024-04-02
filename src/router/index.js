@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 
-import { useUserStore } from '@/stores/userStore'
+/*import { useUserStore } from '@/stores/userStore'*/
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,28 +14,30 @@ const router = createRouter({
     {
       path: '/signin',
       name: 'signin',
-      component: () => import('@/views/SignInView.vue')
+      component: () => import('../views/LoginView.vue')
     },
     {
       path: '/about',
       name: 'about',
-      component: () => import('@/views/AboutView.vue')
+      component: () => import('../views/AboutView.vue')
+    },
+    {
+      path: '/tasks',
+      name: 'tasks',
+      component: () => import('../views/TaskView.vue'),
+      meta: { requiresAuth: true }
     }
   ]
 })
 
 router.beforeEach(async (to, from, next) => {
-  const userStore = useUserStore()
-
-  if (userStore.user === undefined) {
-    await userStore.fetchUser()
-  }
-
-  if (userStore.user === null && to.name !== 'signin') {
-    next({ name: 'signin' })
+  if (to.meta.requiresAuth) {
+    await getUser(next)
   } else {
     next()
   }
 })
 
 export default router
+
+

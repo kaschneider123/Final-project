@@ -1,15 +1,17 @@
 <template>
 	<header>
-		<div class="wrapper">
-			<nav>
-				<RouterLink to="/">Home</RouterLink>
-				<RouterLink to="/about">About</RouterLink>
-			</nav>
-		</div>
+	  <div class="wrapper">
+		<nav>
+		  <RouterLink to="/">Home</RouterLink>
+		  <RouterLink to="/about">About</RouterLink>
+		  <RouterLink to="/login">Login</RouterLink>
+		  <RouterLink to="/tasks">Tasks</RouterLink>
+		</nav>
+	  </div>
 	</header>
-
+  
 	<RouterView />
-</template>
+  </template>
 
 <style scoped>
 header {

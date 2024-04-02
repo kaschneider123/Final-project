@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import { fetchAllTasks, createTask, deleteSingleTask } from '@/api/tasksApi'
+import { fetchAllTasks, createTask, deleteSingleTask, clearAllTasks } from '@/api/tasksApi'
 
 export const useTasksStore = defineStore('tasks', () => {
   // State
@@ -9,7 +9,7 @@ export const useTasksStore = defineStore('tasks', () => {
   // Actions
   async function fetchTasks() {
     try {
-      const data = await fetchAllTasks()      
+      const data = await fetchAllTasks()
       console.log(data)
       tasks.value = data
     } catch (error) {
@@ -20,7 +20,6 @@ export const useTasksStore = defineStore('tasks', () => {
   async function createNewTask(task) {
     try {
       await createTask(task)
-    
     } catch (error) {
       console.error(error)
     }
@@ -29,7 +28,16 @@ export const useTasksStore = defineStore('tasks', () => {
   async function deleteTask(task) {
     try {
       await deleteSingleTask(task)
-      await fetchTasks() // Actualizar la lista de tareas después de la eliminación
+      await fetchTasks() 
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  async function clearTasks() {
+    try {
+      await clearAllTasks() // Borramos todas las tareas de la base de datos
+      tasks.value.splice(0, tasks.value.length) // Vaciamos el array de tareas localmente
     } catch (error) {
       console.error(error)
     }
@@ -42,6 +50,6 @@ export const useTasksStore = defineStore('tasks', () => {
     fetchTasks,
     createNewTask,
     deleteTask,
-
+    clearTasks,
   }
 })

@@ -10,13 +10,8 @@ const taskTitle = ref('')
 
 //Agregamos una tarea
 const _addTask = async () => {
-  const task = {
-    user_id: 'f2916481-8e5e-486f-ad54-7a29c9b9d8b8',
-    title: taskTitle.value,
-    is_complete: false
-  }
-  await tasksStore.createNewTask(task)
-  tasksStore.fetchTasks()
+  
+  await tasksStore.createNewTask(taskTitle.value)
   taskTitle.value = ''
 }
 
@@ -37,30 +32,23 @@ onMounted(() => {
 
 <template>
   <section>
-    <h1>Home View!</h1>
-    <span> tasks: {{ tasks.length }}</span>
-    <ul>
-      <li v-for="task in tasks" :key="task.id">
-        {{ task.title }}
-      </li>
-    </ul>
-
-    <div>
-      Task title:
-      <label>
-        <input type="text" v-model="taskTitle" />
-      </label>
-    </div>
+    <h1>View home</h1>
+    <span>Task: {{ tasks.length }}</span>
     <ul>
       <li v-for="task in tasks" :key="task.id">
         {{ task.title }}
         <font-awesome-icon icon="trash" @click="_deleteTask(task.id)" />
       </li>
-      <br />
-      <br />
-      <button @click="_addTask">Add Tasks</button>
-      <button @click="_clearTasks">Clear List</button>
     </ul>
+
+    <div>
+      Task
+      <label>
+        <input type="text" v-model="taskTitle" />
+      </label>
+      <button @click="_addTask">Add Task</button>
+      <button @click="_clearTasks">Clear List</button>
+    </div>
   </section>
 </template>
 

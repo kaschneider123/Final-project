@@ -6,13 +6,16 @@ export const fetchActualUser = async () => {
 }
 
 export const createNewUser = async (email, password) => {
-  const { data, error } = await supabase.auth.signUp({ email, password })
+  const {
+    data: { user },
+    error
+  } = await supabase.auth.signUp({ email, password })
 
   if (error) {
     throw new Error(error.message)
   }
 
-  return data
+  return user
 }
 
 export const logIn = async (email, password) => {
@@ -28,18 +31,18 @@ export const logIn = async (email, password) => {
   return user
 }
 
-
-/*------*/
-export const seeCurrentUser = async () => {
-  const localUser = await supabase.auth.getSession()
-  console.log(localUser)
-}
-
 export const logout = async () => {
   const { error } = await supabase.auth.signOut()
   if (error) {
     throw new Error(error.message)
-  } else {
-    console.log('logged out')
   }
+  return undefined
+}
+
+export const seeCurrentUser = async () => {
+  const { user, error } = supabase.auth.user()
+  if (error) {
+    throw new Error(error.message)
+  }
+  return user
 }

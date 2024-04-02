@@ -13,12 +13,12 @@ export const fetchAllTasks = async () => {
 }
 
 export const createTask = async (task) => {
-  const { error } = await supabase.from(TABLE_NAME).insert(task)
+  const { error, data } = await supabase.from(TABLE_NAME).insert(task).select()
 
   if (error) {
     throw new Error(error.message)
   }
-  return true
+  return data[0]
 }
 
 export const deleteSingleTask = async (task) => {
@@ -31,7 +31,7 @@ export const deleteSingleTask = async (task) => {
 }
 
 export const clearAllTasks = async () => {
-  const { error } = await supabase.from(TABLE_NAME).delete().match({}) // Borrar todas las tareas
+  const { error } = await supabase.from(TABLE_NAME).delete().match({}) 
   if (error) {
     throw new Error(error.message)
   }

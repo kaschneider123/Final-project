@@ -21,7 +21,7 @@ const logOut = async () => {
         <RouterLink to="/tasks">Tasks</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink v-if="!user" to="/login">Login</RouterLink>
-        <button v-else @click="logOut()">Log Out</button>
+        <button v-else @click="logOut()" class="btn-logOut">Log Out</button>
       </nav>
     </div>
   </header>
@@ -30,6 +30,11 @@ const logOut = async () => {
 </template>
 
 <style scoped>
+.btn-logOut {
+  border: none;
+  background-color: white;
+  font-size: 12px;  
+}
 header {
   line-height: 1.5;
   max-height: 100vh;

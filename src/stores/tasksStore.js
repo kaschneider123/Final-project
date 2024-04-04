@@ -1,6 +1,12 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import { fetchAllTasks, createTask, deleteSingleTask, clearAllTasks } from '@/api/tasksApi'
+import {
+  fetchAllTasks,
+  createTask,
+  deleteSingleTask,
+  updateSingleTask,
+  isCompleteTask
+} from '@/api/tasksApi'
 import { useUserStore } from '@/stores/userStore'
 
 export const useTasksStore = defineStore('tasks', () => {
@@ -25,7 +31,6 @@ export const useTasksStore = defineStore('tasks', () => {
         title: task,
         user_id: userStore.user.id
       })
-
       tasks.value.push(newTask)
     } catch (error) {
       console.error(error)
@@ -41,10 +46,21 @@ export const useTasksStore = defineStore('tasks', () => {
     }
   }
 
-  async function clearTasks() {
+  async function updateTask(task) {
     try {
-      await clearAllTasks() // Borramos todas las tareas de la base de datos
-      tasks.value.splice(0, tasks.value.length) // Vaciamos el array de tareas localmente
+      /* await updateSingleTask(task) */
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  async function completeTask(taskId) {
+    try {
+      await isCompleteTask(taskId)
+      const taskIndex = tasks.value.findIndex((task) => task.id === taskId)
+      if (taskIndex !== -1) {
+        tasks.value[taskIndex].is_complete = true //esto es despues de llamar a supabase
+      }
     } catch (error) {
       console.error(error)
     }
@@ -57,6 +73,7 @@ export const useTasksStore = defineStore('tasks', () => {
     fetchTasks,
     createNewTask,
     deleteTask,
-    clearTasks
+    updateTask,
+    completeTask
   }
 })

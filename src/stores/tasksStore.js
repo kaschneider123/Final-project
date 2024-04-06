@@ -5,7 +5,7 @@ import {
   createTask,
   deleteSingleTask,
   updateSingleTask,
-  isCompleteTask
+  addDescription
 } from '@/api/tasksApi'
 import { useUserStore } from '@/stores/userStore'
 
@@ -37,6 +37,16 @@ export const useTasksStore = defineStore('tasks', () => {
     }
   }
 
+  async function addNewDescription(taskId, description) {
+    try {
+      const updatedTask = await addDescription(taskId, description)
+      return updatedTask
+    } catch (error) {
+      console.error(error)
+      throw error
+    }
+  }
+
   async function deleteTask(taskId) {
     try {
       await deleteSingleTask(taskId)
@@ -48,23 +58,17 @@ export const useTasksStore = defineStore('tasks', () => {
 
   async function updateTask(task) {
     try {
-      /* await updateSingleTask(task) */
-    } catch (error) {
-      console.error(error)
-    }
-  }
+      const updatedTask = await updateSingleTask(task)
 
-  async function completeTask(taskId) {
-    try {
-      await isCompleteTask(taskId)
-      const taskIndex = tasks.value.findIndex((task) => task.id === taskId)
+      const taskIndex = tasks.value.findIndex((t) => t.id === updatedTask.id)
       if (taskIndex !== -1) {
-        tasks.value[taskIndex].is_complete = true //esto es despues de llamar a supabase
+        tasks.value[taskIndex] = updatedTask //esto es despues de llamar a supabase
       }
     } catch (error) {
       console.error(error)
     }
   }
+
 
   return {
     // State
@@ -74,6 +78,6 @@ export const useTasksStore = defineStore('tasks', () => {
     createNewTask,
     deleteTask,
     updateTask,
-    completeTask
+    addNewDescription
   }
 })

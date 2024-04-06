@@ -42,24 +42,42 @@ const _changeSignType = () => {
 
 <template>
   <div>
-    <!--inicio de sesión -->
-    <div v-if="signTypeLogin">
+    <!-- Login -->
+    <div v-if="signTypeLogin" class="container-logIn">
       <h2>Log in</h2>
-      <input v-model="loginUser" type="email" placeholder="Correo electrónico" />
-      <input v-model="loginPassword" type="password" placeholder="Contraseña" />
-      <button @click="signIn">log in</button>
+      <label for="loginUser">Email:</label>
+      <input v-model="loginUser" type="email" placeholder="Email" />
+
+      <label for="loginPassword">Password:</label>
+      <input v-model="loginPassword" type="password" placeholder="Password" />
+      <button @click="signIn">Log in</button>
+      <p>Don't have an account yet?</p>
+      <button @click="_changeSignType">Register</button>
     </div>
 
-    <!--registro de usuario -->
-    <div v-else>
+    <!-- Registration -->
+    <div v-else class="container-register">
       <h2>Register</h2>
-      <input v-model="registerEmail" type="email" placeholder="Correo electrónico" />
-      <input v-model="registerPassword" type="password" placeholder="Contraseña" />
-      <button @click="register">Registrar</button>
+      <input v-model="registerEmail" type="email" placeholder="Email" />
+      <input v-model="registerPassword" type="password" placeholder="Password" />
+      <button @click="register">Register</button>
+      <p>Already have an account?</p>
+      <button @click="_changeSignType">Log in</button>
     </div>
-
-    <button @click="_changeSignType">Register</button>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.container-logIn {
+ display: flex;
+ flex-direction: column;
+ gap: 5px;
+}
+
+.container-register { 
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+}
+
+</style>

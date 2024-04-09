@@ -1,20 +1,20 @@
 <script setup>
-import { useUserStore } from '@/stores/userStore'
+/* import { useUserStore } from '@/stores/userStore'
 import { storeToRefs } from 'pinia'
-import { useRouter } from 'vue-router'
+import { useRouter } from 'vue-router' */ 
 
-const userStore = useUserStore()
+/* const userStore = useUserStore()
 const { user } = storeToRefs(userStore)
 const router = useRouter()
 
 const logOut = async () => {
   await userStore.signOut()
   router.push({ name: 'login' })
-}
+} */
 </script>
 
 <template>
-  <header>
+  <!-- <header>
     <div class="wrapper">
       <nav>
         <RouterLink to="/">Home</RouterLink>
@@ -24,13 +24,13 @@ const logOut = async () => {
         <button v-else @click="logOut()" class="btn-logOut">Log Out</button>
       </nav>
     </div>
-  </header>
+  </header> -->
 
   <RouterView />
 </template>
 
 <style scoped>
-.btn-logOut {
+/* .btn-logOut {
   border: none;
   background-color: white;
   font-size: 12px;  
@@ -63,5 +63,5 @@ nav a {
 
 nav a:first-of-type {
   border: 0;
-}
+} */
 </style>

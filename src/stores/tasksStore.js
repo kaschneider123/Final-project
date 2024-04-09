@@ -1,12 +1,6 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import {
-  fetchAllTasks,
-  createTask,
-  deleteSingleTask,
-  updateSingleTask,
-  addDescription
-} from '@/api/tasksApi'
+import { fetchAllTasks, createTask, deleteSingleTask, updateSingleTask } from '@/api/tasksApi'
 import { useUserStore } from '@/stores/userStore'
 
 export const useTasksStore = defineStore('tasks', () => {
@@ -24,26 +18,17 @@ export const useTasksStore = defineStore('tasks', () => {
     }
   }
 
-  async function createNewTask(task) {
+  async function createNewTask(task, description) {
     const userStore = useUserStore()
     try {
       const newTask = await createTask({
         title: task,
-        user_id: userStore.user.id
+        user_id: userStore.user.id,
+        description: description
       })
       tasks.value.push(newTask)
     } catch (error) {
       console.error(error)
-    }
-  }
-
-  async function addNewDescription(taskId, description) {
-    try {
-      const updatedTask = await addDescription(taskId, description)
-      return updatedTask
-    } catch (error) {
-      console.error(error)
-      throw error
     }
   }
 
@@ -69,7 +54,6 @@ export const useTasksStore = defineStore('tasks', () => {
     }
   }
 
-
   return {
     // State
     tasks,
@@ -77,7 +61,6 @@ export const useTasksStore = defineStore('tasks', () => {
     fetchTasks,
     createNewTask,
     deleteTask,
-    updateTask,
-    addNewDescription
+    updateTask
   }
 })

@@ -11,22 +11,18 @@ export const fetchAllTasks = async () => {
 }
 
 export const createTask = async (task) => {
-  const { error, data } = await supabase.from(TABLE_NAME).insert(task).select()
-  if (error) {
-    throw new Error(error.message)
-  }
-  return data[0]
-}
-
-/*agregar descrption*/
-export const addDescription = async (taskId, description) => {
   const { error, data } = await supabase
     .from(TABLE_NAME)
-    .update({ description: description })
-    .eq('id', taskId)
+    .insert({
+      ...task,
+      description: task.description
+    })
+    .select()
+
   if (error) {
     throw new Error(error.message)
   }
+
   return data[0]
 }
 
@@ -38,7 +34,6 @@ export const deleteSingleTask = async (task) => {
   return true
 }
 
-//***************************/
 export const updateSingleTask = async (task) => {
   const { data, error } = await supabase.from(TABLE_NAME).update(task).eq('id', task.id).select()
 

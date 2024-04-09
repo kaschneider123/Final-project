@@ -25,13 +25,13 @@ export const logIn = async (email, password) => {
   } = await supabase.auth.signInWithPassword({ email, password })
 
   if (error) {
+    console.error('Error de inicio de sesión en Supabase:', error)
     throw new Error(error.message)
   }
 
   return user
 }
 
-/***** */
 export const logout = async () => {
   const { error } = await supabase.auth.signOut()
   if (error) {

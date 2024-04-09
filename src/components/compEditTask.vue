@@ -30,57 +30,88 @@ const _editTask = async () => {
 }
 </script>
 <template>
-  <div>
-    {{ editTask.title }}
-    {{ editTask.description }}
-    {{ editTask.is_complete }}
-    <button @click="_deleteTask" class="btn-delete">Delete</button>
-    <button @click="_handleEdit" class="btn-edit">Edit</button>
-    <div v-show="_isEditing">
+  <div class="container-general">
+    <div class="btn">
+      {{ editTask.title }}
+      {{ editTask.description }}
+      {{ editTask.is_complete ? 'Completed' : 'Incomplete' }}
+      <button @click="_deleteTask" class="btn-delete">Delete</button>
+      <button @click="_handleEdit" class="btn-edit">Edit</button>
+    </div>
+    <div class="container-input" v-show="_isEditing">
       <input type="text" v-model="editTask.title" />
       <input type="text" v-model="editTask.description" />
       <input type="checkbox" v-model="editTask.is_complete" />
-      <button @click="_editTask" class="btn-edit">Save</button>
+      <button @click="_editTask" class="btn-save">Save</button>
     </div>
   </div>
 </template>
 
 <style scoped>
+.btn {
+  display: flex;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.container-input input {
+  background-color: transparent;
+  border: none;
+  max-height: 100px;
+  resize: none;
+  max-width: 500px;
+  max-height: 50px;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+}
+.container-input {
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.btn-save {
+  justify-content: flex-end;
+  width: 35px;
+  height: 15px;
+  font-size: 11px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(32, 95, 242, 0.371);
+  color: rgb(20, 20, 20);
+}
+
 .btn-delete {
+  width: 40px;
+  height: 15px;
   font-size: 10px;
   border-radius: 5px;
   border: none;
-  background-color: rgba(255, 174, 174, 0.394);
-  color: red;
+  background-color: rgba(32, 95, 242, 0.371);
+  color: rgb(33, 33, 33);
 }
 
 .btn-edit {
+  width: 35px;
+  height: 15px;
   font-size: 10px;
   border-radius: 5px;
   border: none;
-  background-color: rgba(242, 242, 32, 0.371);
-  color: rgb(94, 82, 2);
-}
-
-.btn-done {
-  font-size: 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: rgba(73, 208, 5, 0.259);
-  color: green;
+  background-color: rgba(32, 95, 242, 0.371);
+  color: rgb(33, 33, 33);
+  justify-content: right;
 }
 
 .btn-delete:hover {
-  background-color: #ff4000;
+  background-color: #fa4e4ed5;
   color: white;
 }
 
 .btn-edit:hover {
-  background-color: #ffee00;
+  background-color: #fff457;
   color: black;
 }
-.btn-done:hover {
-  background-color: #04ff00;
+
+.btn-save:hover {
+  background-color: #29ea26;
   color: black;
 }
 </style>

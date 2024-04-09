@@ -18,13 +18,13 @@ export const useTasksStore = defineStore('tasks', () => {
     }
   }
 
-  async function createNewTask(task, description) {
+  async function createNewTask(title, description) {
     const userStore = useUserStore()
     try {
       const newTask = await createTask({
-        title: task,
+        title,
         user_id: userStore.user.id,
-        description: description
+        description
       })
       tasks.value.push(newTask)
     } catch (error) {
@@ -47,7 +47,7 @@ export const useTasksStore = defineStore('tasks', () => {
 
       const taskIndex = tasks.value.findIndex((t) => t.id === updatedTask.id)
       if (taskIndex !== -1) {
-        tasks.value[taskIndex] = updatedTask //esto es despues de llamar a supabase
+        tasks.value[taskIndex] = updatedTask
       }
     } catch (error) {
       console.error(error)

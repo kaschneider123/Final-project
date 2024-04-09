@@ -16,22 +16,25 @@ const errorMessage = ref(null)
 
 //registrar un nuevo usuario
 const register = async () => {
-  try {
-    errorMessage.value = null
+  try {    
+    await userStore.validateEmail(registerEmail.value)
     await userStore.signUp(registerEmail.value, registerPassword.value)
     router.push({ name: 'tasks' })
   } catch (error) {
-    errorMessage.value = error.message
+    console.error(error)
+    window.alert('Por favor ingrese un correo electrónico válido.')
   }
 }
 
 //Iniciar sesión
 const signIn = async () => {
   try {
+    await userStore.validateEmail(loginUser.value)
     await userStore.signIn(loginUser.value, loginPassword.value)
     router.push({ name: 'home' })
   } catch (error) {
     console.error(error)
+    window.alert('Por favor ingrese un correo electrónico válido.')
   }
 }
 
@@ -39,10 +42,8 @@ const _changeSignType = () => {
   signTypeLogin.value = !signTypeLogin.value
 }
 </script>
-
 <template>
-  <div class="container-img" >
-    <!-- <img src="./assets/logo.svg" alt=""> -->
+  <div class="container-img">
     <!-- Login -->
     <div v-if="signTypeLogin" class="container-logIn">
       <h2>To-Do List</h2>
@@ -54,6 +55,7 @@ const _changeSignType = () => {
         <input v-model="loginPassword" type="password" placeholder="Password" />
         <button class="btn-login-one" @click="signIn">Log in</button>
         <p>Don't have an account yet?</p>
+        <div v-if="errorMessage !== null" class="error-message">{{ errorMessage }}</div>
         <button class="btn-register" @click="_changeSignType">Register</button>
       </div>
     </div>
@@ -66,6 +68,8 @@ const _changeSignType = () => {
         <label for="loginPassword">Password:</label>
         <input v-model="registerPassword" type="password" placeholder="Password" />
       </div>
+      <!-- Mostrar mensaje de error -->
+      <div v-if="errorMessage !== null" class="error-message">{{ errorMessage }}</div>
       <button class="btn-register" @click="register">Register</button>
       <p>Already have an account?</p>
       <button class="btn-login" @click="_changeSignType">Log in</button>
@@ -74,25 +78,14 @@ const _changeSignType = () => {
 </template>
 
 <style scoped>
- .container-img { 
- 
-  padding-top: 20px;
-    background-image: url(../assets/imagen1.svg);
-  background-repeat: no-repeat;   
-/*   background-color: rgba(0, 0, 0, 0.093); */
-
-  background-size: 150px; 
-  background-position: left;
- 
-  
-} 
-
-.container-img svg {
-  width: 50px;
-  height: 50px;
+.label-one p {
+  font-size: 17px;
+  text-align: center;
 }
-
-
+.container-register p {
+  font-size: 17px;
+  text-align: center;
+}
 
 h2 {
   font-family: Arial, Helvetica, sans-serif;
@@ -103,11 +96,11 @@ h2 {
 .label-one {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
 }
 
 .btn-login-one {
-  width: 200px;
+  width: 220px;
   background-color: #0052cc;
   border: none;
   color: white;
@@ -122,7 +115,7 @@ btn-login-one:hover {
 .container-logIn label {
   display: flex;
   text-align: left;
-  font-size: 13px;
+  font-size: 15px;
 }
 .container-logIn {
   margin: 0 auto;
@@ -132,24 +125,24 @@ btn-login-one:hover {
 }
 
 .container-logIn input {
-  width: 200px;
+  width: 220px;
   height: 25px;
   box-sizing: border-box;
   margin-bottom: 10px;
   border-radius: 5px solid 0.5;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .container-logIn {
   padding: 20px;
   display: flex;
   align-items: center;
-  width: 300px;
-  height: 350px;
+  width: 380px;
+  height: 400px;
   background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -158,7 +151,7 @@ btn-login-one:hover {
 .container-register label {
   display: flex;
   text-align: left;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .container-register {
@@ -166,19 +159,19 @@ btn-login-one:hover {
   padding: 20px;
   display: flex;
   align-items: center;
-  width: 300px;
-  height: 350px;
+  width: 380px;
+  height: 400px;
   background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .container-register .btn-login,
 .btn-register {
-  width: 200px;
+  width: 220px;
   background-color: #0052cc;
   border: none;
   color: white;
@@ -188,11 +181,11 @@ btn-login-one:hover {
 }
 
 .container-register input {
-  width: 200px;
+  width: 220px;
   height: 25px; /* Hace que los inputs ocupen todo el ancho del contenedor */
   box-sizing: border-box; /* Incluye el padding y border en el ancho total */
   margin-bottom: 10px;
   border-radius: 5px solid 0.5;
-  font-size: 13px;
+  font-size: 15px;
 }
 </style>

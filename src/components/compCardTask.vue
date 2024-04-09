@@ -11,8 +11,9 @@ const tasksStore = useTasksStore()
 const { tasks } = storeToRefs(tasksStore)
 
 const _addTask = async () => {
-  await tasksStore.createNewTask(title.value)
+  await tasksStore.createNewTask(title.value, description.value)
   title.value = ''
+  description.value = ''
 }
 </script>
 
@@ -55,6 +56,11 @@ const _addTask = async () => {
 </template>
 
 <style scoped>
+.check-box {
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+}
 /* Estilos para los párrafos y spans dentro de .list-task */
 .list-task p {
   font-size: 18px;
@@ -84,7 +90,6 @@ const _addTask = async () => {
   flex-direction: row;
   overflow-y: scroll;
   max-height: 520px;
- 
 }
 .list-task .color-par {
   background-color: #8995fc2e;
@@ -118,10 +123,10 @@ const _addTask = async () => {
 
 /* Estilos para los container  */
 .container-principal {
+  margin-top: 70px;
   padding: 15px;
   display: flex;
   flex-direction: row;
-  margin-top: 70px;
   width: 100%;
 }
 .container-card ::placeholder {
@@ -133,23 +138,24 @@ const _addTask = async () => {
   display: flex;
   margin-top: 10px;
   margin-bottom: 30px;
+  height: 25px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
 }
 .container-card h2 {
   font-size: 18px;
   color: rgb(0, 0, 129);
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
- 
-  
 }
 .container-card {
-  padding: 50px;
   text-align: left;
-}
-.container-card input {
-  height: 25px;
-  border-radius: 5px;
-  border: none;
+  height: 450px;
+  background-color: #edf0ff80;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
 }
 
@@ -162,19 +168,10 @@ const _addTask = async () => {
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
   color: white;
   font-weight: bold;
-  margin-top:150px ;
 }
 .btn-add:hover {
   background-color: rgb(42, 42, 176);
   color: white;
-}
-.container-card {
-  background-color: #edf0ff80;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
- /*  max-height: 400px; */
 }
 
 /* Estilos para la barra  */

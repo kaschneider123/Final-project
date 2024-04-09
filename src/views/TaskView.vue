@@ -4,6 +4,7 @@ import { onMounted } from 'vue'
 import compCardTask from '../components/compCardTask.vue'
 import compNavBar from '../components/compNavBar.vue'
 
+
 const tasksStore = useTasksStore()
 
 onMounted(() => {
@@ -15,7 +16,7 @@ onMounted(() => {
   <section>
     <compNavBar />
     <compCardTask />
-    <compEditTask />
+    <!-- <compEditTask /> -->
   </section>
 </template>
 

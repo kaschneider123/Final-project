@@ -4,7 +4,6 @@ import { storeToRefs } from 'pinia'
 import { ref } from 'vue'
 import CompEditTask from '@/components/compEditTask.vue'
 
-
 const title = ref('')
 const description = ref('')
 
@@ -24,17 +23,20 @@ const _addTask = async () => {
     <div class="container-principal">
       <div class="container-card">
         <h2>Add a new task</h2>
-        <label for="title">Title:</label>
-        <input v-model="title" type="text" placeholder="Title" id="title" />
+        <label for="title"
+          ><input v-model="title" type="text" placeholder="Title" id="title"
+        /></label>
 
-        <label for="description">Description:</label>
-        <input
-          v-model="description"
-          type="text"
-          placeholder="Description"
-          id="description"
-          style="width: 200px; height: 120px"
-        />
+        <label for="description">
+          <textarea
+            v-model="description"
+            type="text"
+            placeholder="Description"
+            id="description"
+            style="width: 200px; height: 120px"
+          />
+        </label>
+
         <button @click="_addTask" class="btn-add">Add</button>
       </div>
 

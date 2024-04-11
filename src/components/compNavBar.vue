@@ -13,7 +13,6 @@ const logOut = async () => {
   router.push({ name: 'login' })
 }
 
-/*********************************************/
 
 const isMenuOpen = ref(false)
 
@@ -34,7 +33,7 @@ const toggleMenu = () => {
         </div>
         <div class="nav-toggle">
           <button @click="toggleMenu">
-            <font-awesome-icon icon="ellipsis-v" />
+            <font-awesome-icon icon="ellipsis-v" class="btn-mobile" />
           </button>
         </div>
         <!-- menú desplegable -->
@@ -53,6 +52,9 @@ const toggleMenu = () => {
 </template>
 
 <style scoped>
+/* .btn-mobile{
+  background-color: rgb(170, 105, 7);
+} */
 .nav-toggle{
   display: none;
 }

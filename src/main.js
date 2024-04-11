@@ -10,11 +10,6 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faTrash, faEdit, faSquareCheck, faEllipsisV } from '@fortawesome/free-solid-svg-icons'
 
-
-
-
-/*import '@mdi/font/css/materialdesignicons.min.css'; */
-
 library.add(faTrash, faEdit, faSquareCheck, faEllipsisV)
 
 const app = createApp(App)

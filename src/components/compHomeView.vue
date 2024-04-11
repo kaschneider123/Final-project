@@ -20,32 +20,36 @@ const goToTaskView = () => {
         <li><p>Adjust as needed, staying flexible.</p></li>
       </ul>
     </div>
-    <video
-      class="video_background"
-      src="../assets/videoToDo.mp4"
-      alt=""
-      autoplay
-      loop
-      muted
-    ></video>
+    <div class="video-container">
+      <video
+        class="video_background"
+        src="../assets/videoToDo.mp4"
+        alt=""
+        autoplay
+        loopTo-Do
+        List
+        muted
+      ></video>
+    </div>
     <a @click="goToTaskView">Begin Tasks</a>
   </div>
 </template>
 
 <style scoped>
-.container-list p {
-  font-size: 18px;
+.video-container {
+  width: 100%;
 }
 .container-list {
   display: flex;
   flex-direction: column;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+  font-size: 25px;
   color: rgb(61, 61, 61);
 }
 
 h1 {
+  font-size: 55px;
   font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 15px;
   color: rgb(0, 0, 129);
@@ -67,7 +71,7 @@ li {
   left: 0;
   width: 100vw;
   height: 100vh;
-  object-fit: fill;
+  object-fit: cover;
   opacity: 40%;
   z-index: -1;
 }
@@ -79,7 +83,7 @@ a {
   transform: translate(-50%, -50%);
   height: 38px;
   width: 180px;
-  background-color:#0052cc;
+  background-color: #0052cc;
   text-align: center;
   color: white;
   font-family: Arial, sans-serif;
@@ -95,94 +99,67 @@ a:hover {
 }
 
 /* Medias Queries******************************************************************/
-
-@media only screen and (max-width: 1000px) {
+@media only screen and (min-width: 769px) and (max-width: 1023px) {
   .container-list {
     font-size: 15px;
-    margin-top: 100px;
     align-items: center;
     justify-content: center;
   }
+  .container-list p {
+    font-size: 20px;
+  }
 
   h1 {
-    font-size: 24px;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 15px;
+    color: rgb(0, 0, 129);
+    font-weight: bold;
+    margin: 70px;
   }
 
   ul {
-    font-size: 16px;
+    margin-top: 0px;
   }
+}
 
-  .container-list p {
+@media only screen and (max-width: 768px) {
+  .container-list {
     font-size: 15px;
+    align-items: center;
+    justify-content: center;
+  }
+  .container-list p {
+    font-size: 18px;
   }
 
-  .container a {
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 28px;
-    width: 150px;
-    background-color: blue;
-    text-align: center;
-    color: white;
-    font-family: Arial, sans-serif;
-    line-height: 22px;
-    border-radius: 10px;
-    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
-    z-index: 1;
+  h1 {
+    font-size: 45px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 15px;
+    color: rgb(0, 0, 129);
     font-weight: bold;
-    font-size: 13px;
+    margin: 70px;
   }
 
-  .video_background {
-    height: 70vh;
-    object-fit: fill;
+  ul {
+    margin-top: 0px;
   }
 }
 
 @media only screen and (max-width: 480px) {
   .container-list {
-    font-size: 16px;
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
+  }
+  .container-list p {
+    font-size: 18px;
   }
 
-  h1 {
-    font-size: 20px;
-  }
-
-  li p {
-    font-size: 12px;
-  }
-  ul {
-    font-size: 14px;
-  }
-
-  .container a {
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 35px;
-    width: 180px;
-    background-color: blue;
-    text-align: center;
-    color: white;
-    font-family: Arial, sans-serif;
-    line-height: 28px;
-    border-radius: 10px;
-    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    font-size: 13px;
-  }
-
-  .video_background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+  .container-list h1 {
+    font-size: 35px;
+    margin: 70px;
   }
 }
 </style>

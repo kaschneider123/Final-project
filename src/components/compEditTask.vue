@@ -48,6 +48,7 @@ const _editTask = async () => {
 </template>
 
 <style scoped>
+
 .btn {
   display: flex;
   padding-left: 10px;

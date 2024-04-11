@@ -4,6 +4,7 @@ import { storeToRefs } from 'pinia'
 import { ref } from 'vue'
 import CompEditTask from '@/components/compEditTask.vue'
 
+
 const title = ref('')
 const description = ref('')
 

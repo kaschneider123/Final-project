@@ -13,52 +13,53 @@ const logOut = async () => {
   router.push({ name: 'login' })
 }
 
+/*********************************************/
+
 const isMenuOpen = ref(false)
 
-// Función para alternar la visibilidad del menú
-/* const toggleMenu = () => {
+const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
-} */
+}
 </script>
 
 <template>
-    <header>
-      <div>
-        <nav class="navbar">
-          <div class="container">
-            <RouterLink to="/">Home</RouterLink>
-            <RouterLink to="/tasks">Tasks</RouterLink>
-           <!--  <RouterLink to="/about">About</RouterLink> -->
-            <RouterLink v-if="!user" to="/login">Login</RouterLink>
-            <button v-else @click="logOut()" class="btn-log-out">Log Out</button>
-            <!-- <button @click="toggleMenu" class="nav-toggle">
-              <i class="fas fa-ellipsis-v"></i>
-            </button> -->
-          </div>
-          <!-- menú desplegable -->
-          <ul class="nav-menu" :class="{ open: isMenuOpen }">
+  <header>
+    <div>
+      <nav class="navbar">
+        <div class="container">
+          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/tasks">Tasks</RouterLink>
+          <RouterLink v-if="!user" to="/login">Login</RouterLink>
+          <button v-else @click="logOut()" class="btn-log-out">Log Out</button>
+        </div>
+        <div class="nav-toggle">
+          <button @click="toggleMenu">
+            <font-awesome-icon icon="ellipsis-v" />
+          </button>
+        </div>
+        <!-- menú desplegable -->
+        <div>
+          <!-- <h3>IronHack</h3> -->
+          <ul class="nav-menu" :class="{ 'show-menu': isMenuOpen }">
             <li><RouterLink to="/">Home</RouterLink></li>
             <li><RouterLink to="/tasks">Tasks</RouterLink></li>
-            <!-- <li><RouterLink to="/about">About</RouterLink></li> -->
             <li v-if="!user"><RouterLink to="/login">Login</RouterLink></li>
             <li v-else><button @click="logOut()" class="btn-log-out">Log Out</button></li>
           </ul>
-        </nav>
-      </div>
-    </header>
-  </template>
+        </div>
+      </nav>
+    </div>
+  </header>
+</template>
 
 <style scoped>
-
-.nav-menu {
-  display: none; 
-  position: absolute;
-  top: 50px; 
-  left: 0;
-  width: 100%;
-  background-color: white;
-  z-index: 9; 
+.nav-toggle{
+  display: none;
 }
+  .nav-menu {
+    display: none;
+  }
+  
 
 .container {
   display: flex;
@@ -86,15 +87,14 @@ const isMenuOpen = ref(false)
   align-content: center;
   border: none;
   background-color: rgba(255, 255, 255, 0.998);
-  font-size: 15px;   
+  font-size: 15px;
   position: absolute;
   right: 0;
-  margin-right:40px ; 
+  margin-right: 40px;
   padding-top: 8px;
   color: rgb(201, 0, 0);
   border-radius: 5px;
   font-weight: bold;
- 
 }
 
 header {
@@ -127,39 +127,63 @@ nav a:first-of-type {
   border: 0;
 }
 
-
 /***************************************/
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 480px) {  
+  .nav-menu {
+    display: none;
+  }
 
-  .nav-menu { 
-  position: absolute;
-  top: 50px; 
-  left: 0;
-  width: 100%;
-  background-color: white;
-  z-index: 9; 
-}
-
-
-  .nav-menu.open {
+  .show-menu {
     display: block;
+  }
+  .nav-toggle {
+    display: block;
+  }
+  .container {
+    display: none;
+  }
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+  }
+
+  .nav-toggle {
+    display: none;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .nav-menu {
-    display: block; 
+    display: none;
+  }
+
+  .show-menu {
+    display: block;
+  }
+  .nav-toggle {
+    display: block;
+  }
+  .container {
+    display: none;
   }
 
   .nav-menu {
-    position: static;
-    display: none; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
   }
 
-  .nav-menu.open {
-    display: block;
+  .nav-toggle {
+    margin-left: 300px;    
   }
 }
 </style>
-
-

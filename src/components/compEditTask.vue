@@ -32,37 +32,63 @@ const _editTask = async () => {
 <template>
   <div class="container-general">
     <div class="btn">
+      <input type="checkbox" v-model="editTask.is_complete" />
       {{ editTask.title }}
-      {{ editTask.description }}
-      {{ editTask.is_complete ? 'Completed' : 'Incomplete' }}
-      <button @click="_deleteTask" class="btn-delete">Delete</button>
-      <button @click="_handleEdit" class="btn-edit">Edit</button>
+      <!-- {{ editTask.description }} -->
+      <div class="div-btns">
+        <button @click="_deleteTask" class="btn-delete">Delete</button>
+        <button @click="_handleEdit" class="btn-edit">Edit</button>
+      </div>
     </div>
     <div class="container-input" v-show="_isEditing">
       <input type="text" v-model="editTask.title" />
       <input type="text" v-model="editTask.description" />
-      <input type="checkbox" v-model="editTask.is_complete" />
-      <button @click="_editTask" class="btn-save">Save</button>
+
+      <div class="check-btn-save">
+        <button @click="_editTask" class="btn-save">Save</button>
+        {{ editTask.is_complete ? 'Completed' : 'Incomplete' }}
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-
-.btn {
+.check-btn-save {
   display: flex;
-  padding-left: 10px;
-  padding-top: 5px;
+  gap: 15px;
 }
 
+.btn-save {
+  margin-bottom: 10px;
+}
+
+.div-btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 10px;
+}
+.container-input {
+  background-color: #f8f9ff80;
+  display: flex;
+  flex-direction: column;
+  padding-right: 15px;
+  gap: 10px;
+}
+.container-general {
+  /*  background-color: #8995fc2e; */
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
+  width: 350px;
+}
 .container-input input {
-  background-color: transparent;
+  background-color: white;
   border: none;
-  max-height: 100px;
   resize: none;
-  max-width: 500px;
-  max-height: 50px;
-  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
 }
 .container-input {
   padding-left: 10px;
@@ -71,9 +97,9 @@ const _editTask = async () => {
 
 .btn-save {
   justify-content: flex-end;
-  width: 35px;
-  height: 15px;
-  font-size: 11px;
+  width: 52px;
+  height: 22px;
+  font-size: 12px;
   border-radius: 5px;
   border: none;
   background-color: rgba(32, 95, 242, 0.371);
@@ -81,9 +107,9 @@ const _editTask = async () => {
 }
 
 .btn-delete {
-  width: 40px;
-  height: 15px;
-  font-size: 10px;
+  width: 52px;
+  height: 22px;
+  font-size: 12px;
   border-radius: 5px;
   border: none;
   background-color: rgba(32, 95, 242, 0.371);
@@ -91,9 +117,9 @@ const _editTask = async () => {
 }
 
 .btn-edit {
-  width: 35px;
-  height: 15px;
-  font-size: 10px;
+  width: 52px;
+  height: 22px;
+  font-size: 12px;
   border-radius: 5px;
   border: none;
   background-color: rgba(32, 95, 242, 0.371);

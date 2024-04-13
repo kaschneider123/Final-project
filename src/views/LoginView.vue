@@ -182,8 +182,8 @@ btn-login-one:hover {
 
 .container-register input {
   width: 220px;
-  height: 25px; /* Hace que los inputs ocupen todo el ancho del contenedor */
-  box-sizing: border-box; /* Incluye el padding y border en el ancho total */
+  height: 25px; 
+  box-sizing: border-box; 
   margin-bottom: 10px;
   border-radius: 5px solid 0.5;
   font-size: 15px;

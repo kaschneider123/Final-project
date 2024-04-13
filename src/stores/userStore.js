@@ -34,7 +34,7 @@ export const useUserStore = defineStore('user', () => {
     }
   }
 
-  /***/
+
   async function signOut() {
     try {
       user.value = await logout()

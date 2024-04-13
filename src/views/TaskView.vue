@@ -15,8 +15,7 @@ onMounted(() => {
 <template>
   <section>
     <compNavBar />
-    <compCardTask />
-    <!-- <compEditTask /> -->
+    <compCardTask />   
   </section>
 </template>
 

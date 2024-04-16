@@ -1,8 +1,9 @@
 <script setup>
 import { useTasksStore } from '@/stores/tasksStore'
 import { storeToRefs } from 'pinia'
-import { ref } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import CompEditTask from '@/components/compEditTask.vue'
+import SelectionBar from '@/components/SelectionBar.vue'
 
 const title = ref('')
 const description = ref('')
@@ -15,6 +16,31 @@ const _addTask = async () => {
   title.value = ''
   description.value = ''
 }
+
+// selection bar - FILTER TASK FUNCTION
+const filter = ref('all')
+
+const filteredTasks = computed(() => {
+  switch (filter.value) {
+    case 'completed':
+      return tasks.value.filter((task) => task.is_complete)
+    case 'pending':
+      return tasks.value.filter((task) => !task.is_complete)
+    case 'all':
+    default:
+      return tasks.value
+  }
+})
+
+const numTasks = computed(() => filteredTasks.value.length)
+
+function filterTasks(selectedFilter) {
+  filter.value = selectedFilter
+}
+
+onMounted(() => {
+  tasksStore.fetchTasks()
+})
 </script>
 
 <template>
@@ -31,20 +57,20 @@ const _addTask = async () => {
         <label class="label-description" for="description">
           <textarea v-model="description" type="text" placeholder="Description" id="description" />
         </label>
-        <div>
-          <h3></h3>
-        </div>
+
+        <h4>Filters</h4>
+        <SelectionBar @filter="filterTasks" />
         <button @click="_addTask" class="btn-add">Add</button>
       </div>
 
       <!-- Contenedor list Tasks -->
       <div class="container-list">
         <p>List of tasks</p>
-        <span> You have {{ tasks.length }} tasks:</span>
+        <span> You have {{ numTasks }} tasks:</span>
         <div class="input-list">
           <ul class="list-task">
             <li
-              v-for="(task, index) in tasks"
+              v-for="(task, index) in filteredTasks"
               :key="task.id"
               :class="{ 'color-par': index % 2 === 0 }"
             >
@@ -58,10 +84,23 @@ const _addTask = async () => {
 </template>
 
 <style scoped>
+
+h4 {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif; 
+  color: rgb(0, 0, 129); 
+  
+}
+.container-principal {
+  width: 750px;
+}
+
+.li:last-child {
+  padding-bottom: 50px;
+}
 .container-card h3 {
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
-  /* padding-bottom: 150px */
   padding-top: 20px;
 }
 
@@ -79,7 +118,7 @@ const _addTask = async () => {
 /*Fondo blanco card*/
 .background-color {
   background-color: white;
-  max-width: 800px;
+  width: 100%;
 }
 /*Imagen de fondo*/
 .hero-image {
@@ -95,7 +134,7 @@ const _addTask = async () => {
 
 /*Lista de tareas*/
 .input-list {
-  width: 500px;
+  width: 450px;
   height: 100%;
 }
 .container-card {
@@ -119,7 +158,7 @@ const _addTask = async () => {
   height: auto;
 }
 
-.container-list {
+.input-list {
   display: flex;
   flex-direction: column;
   max-height: 450px;
@@ -186,7 +225,7 @@ const _addTask = async () => {
 }
 .container-card {
   text-align: left;
-  height: 450px;
+  height: 500px;
   background-color: #edf0ff80;
   display: flex;
   flex-direction: column;
@@ -199,10 +238,11 @@ const _addTask = async () => {
   background-color: #0052cc;
   border: none;
   height: 35px;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
   color: white;
   font-weight: bold;
+  margin-top: 160px;
 }
 .btn-add:hover {
   background-color: rgb(42, 42, 176);
@@ -222,12 +262,16 @@ const _addTask = async () => {
   background: rgba(32, 95, 242, 0.646);
 }
 
+
 /* Medias query ************************** */
 
 @media only screen and (max-width: 768px) {
+
   .container-principal {
-    margin-top: 50px;
-    padding: 15px;
+  width: 750px;
+}
+  .container-principal {   
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
   }
@@ -242,6 +286,7 @@ const _addTask = async () => {
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
   }
   .container-card {
+    max-width: 400px;
     flex-direction: column;
     text-align: left;
     height: 100%;
@@ -262,6 +307,7 @@ const _addTask = async () => {
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
     color: white;
     font-weight: bold;
+    margin-top: 10px;
   }
   .container-card h3 {
     font-size: 16px;
@@ -275,7 +321,7 @@ const _addTask = async () => {
     border: none;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
   }
-  .container-list {
+  .input-list {
     display: flex;
     flex-direction: column;
     max-height: 450px;
@@ -290,10 +336,15 @@ const _addTask = async () => {
   }
 }
 @media only screen and (max-width: 514px) {
+  .background-color {
+    background-color: white;
+    max-width: 350px;   
+  }
   .container-principal {
-    margin-top: 100px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    margin-top: 100px;
   }
 
   .container-card {

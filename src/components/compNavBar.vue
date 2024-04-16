@@ -13,7 +13,6 @@ const logOut = async () => {
   router.push({ name: 'login' })
 }
 
-
 const isMenuOpen = ref(false)
 
 const toggleMenu = () => {
@@ -38,7 +37,7 @@ const toggleMenu = () => {
         </div>
         <!-- menú desplegable -->
         <div>
-          <!-- <h3>IronHack</h3> -->
+          <h3 class="title-mobile">To Do list</h3>
           <ul class="nav-menu" :class="{ 'show-menu': isMenuOpen }">
             <li><RouterLink to="/">Home</RouterLink></li>
             <li><RouterLink to="/tasks">Tasks</RouterLink></li>
@@ -52,16 +51,15 @@ const toggleMenu = () => {
 </template>
 
 <style scoped>
-/* .btn-mobile{
-  background-color: rgb(170, 105, 7);
-} */
-.nav-toggle{
+.title-mobile {
+  display: none !important;
+}
+.nav-toggle {
   display: none;
 }
-  .nav-menu {
-    display: none;
-  }
-  
+.nav-menu {
+  display: none;
+}
 
 .container {
   display: flex;
@@ -84,7 +82,7 @@ const toggleMenu = () => {
 }
 
 .btn-log-out {
-  display: flex;
+  /*   display: flex; */
   justify-content: center;
   align-content: center;
   border: none;
@@ -130,20 +128,25 @@ nav a:first-of-type {
 }
 
 /***************************************/
-@media only screen and (max-width: 480px) {  
+
+@media only screen and (min-width: 768px) {
+  .title-mobile {
+    display: none;
+  }
   .nav-menu {
     display: none;
   }
 
   .show-menu {
-    display: block;
-  }
-  .nav-toggle {
-    display: block;
-  }
-  .container {
     display: none;
   }
+  .nav-toggle {
+    display: none;
+  }
+  .container {
+    display: block;
+  }
+
   .nav-menu {
     position: absolute;
     top: 100%;
@@ -154,12 +157,26 @@ nav a:first-of-type {
     padding: 10px 0;
   }
 
-  .nav-toggle {
-    display: none;
+  .btn-log-out {
+    /* display: flex; */
+    justify-content: center;
+    align-content: center;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.998);
+    font-size: 15px;
+    /* position: absolute; */
+    /* right: 0; */
+    margin-right: 40px;
+    padding-top: 8px;
+    color: rgb(201, 0, 0);
+    border-radius: 5px;
+    font-weight: bold;
   }
 }
-
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 480px) {
+  .nav-toggle {
+    margin-left: 330px;
+  }
   .nav-menu {
     display: none;
   }
@@ -173,7 +190,6 @@ nav a:first-of-type {
   .container {
     display: none;
   }
-
   .nav-menu {
     position: absolute;
     top: 100%;
@@ -185,7 +201,19 @@ nav a:first-of-type {
   }
 
   .nav-toggle {
-    margin-left: 300px;    
+    display: block;
+  }
+
+  .title-mobile {
+    display: block !important;
+  }
+  .title-mobile {
+    color: rgb(0, 0, 129);
+    font-size: 25px;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    justify-content: center;
   }
 }
 </style>

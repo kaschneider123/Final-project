@@ -36,6 +36,12 @@ const goToTaskView = () => {
 </template>
 
 <style scoped>
+.container {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.5);
+}
 .video-container {
   width: 100%;
 }
@@ -62,7 +68,7 @@ ul {
 }
 
 li {
-  font-size: 23px;
+  font-size: 20px;
 }
 
 .video_background {
@@ -88,7 +94,7 @@ a {
   color: white;
   font-family: Arial, sans-serif;
   line-height: 34px;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
   z-index: 1;
   font-weight: bold;
@@ -99,7 +105,7 @@ a:hover {
 }
 
 /* Medias Queries******************************************************************/
-@media only screen and (min-width: 769px) and (max-width: 1023px) {
+/* @media only screen and (min-width: 769px) and (max-width: 1023px) {
   .container-list {
     font-size: 15px;
     align-items: center;
@@ -121,16 +127,18 @@ a:hover {
   ul {
     margin-top: 0px;
   }
-}
+} */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width:419px) and (max-width: 990px) {
   .container-list {
     font-size: 15px;
     align-items: center;
     justify-content: center;
+    
   }
   .container-list p {
-    font-size: 18px;
+    font-size: 16px;
+
   }
 
   h1 {
@@ -139,27 +147,48 @@ a:hover {
     margin-bottom: 15px;
     color: rgb(0, 0, 129);
     font-weight: bold;
-    margin: 70px;
+  
   }
 
   ul {
     margin-top: 0px;
   }
+  a {
+    position: absolute;
+    top: 70%;
+  left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .container {
+    margin-top: 100px;
+
+}
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 418px) {
+  .container {
+    margin-top: 100px;
+
+}
   .container-list {
     font-size: 15px;
     align-items: center;
     justify-content: center;
+
   }
   .container-list p {
-    font-size: 18px;
+    font-size: 13px;
   }
 
   .container-list h1 {
-    font-size: 35px;
-    margin: 70px;
+    font-size: 30px;
+   
+  }
+  a {
+    position: absolute;
+    top: 60%!important;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 </style>

@@ -54,6 +54,23 @@ export const useTasksStore = defineStore('tasks', () => {
     }
   }
 
+  /*Carousel************************* */
+  async function generateDaysForYear() {
+    console.log("Generando días del año...");
+    const daysInYear = [];
+    const startDate = new Date(new Date().getFullYear(), 0, 1);
+    const endDate = new Date(new Date().getFullYear(), 11, 31);
+  
+    for (let date = startDate; date <= endDate; date.setDate(date.getDate() + 1)) {
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const formattedDate = date.toLocaleDateString(undefined, options);
+      daysInYear.push(formattedDate);
+      await new Promise((resolve) => setTimeout(resolve, 100));
+    }
+  
+    return daysInYear;
+  }
+
   return {
     // State
     tasks,
@@ -61,6 +78,7 @@ export const useTasksStore = defineStore('tasks', () => {
     fetchTasks,
     createNewTask,
     deleteTask,
-    updateTask
+    updateTask,
+    generateDaysForYear
   }
 })

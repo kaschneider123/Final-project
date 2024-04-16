@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useTasksStore } from '@/stores/tasksStore'
+/* import Confirmation from './Confirmation.vue'; */
 
 const tasksStore = useTasksStore()
 
@@ -28,11 +29,19 @@ const _editTask = async () => {
     console.error('Error al actualizar la tarea....', error)
   }
 }
+
+const _handleUpDate = async () => {
+  try {
+    await _editTask()
+  } catch (error) {
+    console.error('Error al actualizar la tarea....', error)
+  }
+}
 </script>
 <template>
   <div class="container-general">
     <div class="btn">
-      <input type="checkbox" v-model="editTask.is_complete" />
+      <input @change="_handleUpDate" type="checkbox" v-model="editTask.is_complete" />
       {{ editTask.title }}
       <!-- {{ editTask.description }} -->
       <div class="div-btns">
@@ -46,7 +55,7 @@ const _editTask = async () => {
 
       <div class="check-btn-save">
         <button @click="_editTask" class="btn-save">Save</button>
-        {{ editTask.is_complete ? 'Completed' : 'Incomplete' }}
+        <!-- {{ editTask.is_complete ? 'Completed' : 'Incomplete' }} -->
       </div>
     </div>
   </div>
@@ -65,12 +74,12 @@ const _editTask = async () => {
 .div-btns {
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 12px;
 }
 
 .btn {
-  margin-top: 20px;
-  padding: 10px;
+  margin-top: 10px;
+  padding: 8px;
 }
 .container-input {
   background-color: #f8f9ff80;
@@ -128,17 +137,17 @@ const _editTask = async () => {
 }
 
 .btn-delete:hover {
-  background-color: #fa4e4ed5;
-  color: white;
+  background-color: rgba(94, 139, 244, 0.371);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
 .btn-edit:hover {
-  background-color: #fff457;
-  color: black;
+  background-color: rgba(94, 139, 244, 0.371);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
 .btn-save:hover {
-  background-color: #29ea26;
-  color: black;
+  background-color: rgba(94, 139, 244, 0.371);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
 }
 </style>

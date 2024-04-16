@@ -23,9 +23,8 @@ const emitFilter = (filter) => {
   justify-content: space-around;
   gap: 8px;
   padding-top: 20px;
-
 }
-.all-tasks{
+.all-tasks {
   justify-content: flex-end;
   width: 55px;
   height: 25px;
@@ -36,7 +35,6 @@ const emitFilter = (filter) => {
   color: rgb(33, 33, 33);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
   font-weight: 500;
-
 }
 
 .completed-tasks {
@@ -61,15 +59,15 @@ const emitFilter = (filter) => {
   color: rgb(33, 33, 33);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
 }
-.all-tasks:hover{
+.all-tasks:hover {
   background-color: rgba(94, 139, 244, 0.371);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
 }
-.completed-tasks:hover{
+.completed-tasks:hover {
   background-color: rgba(94, 139, 244, 0.371);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
 }
-.pending-tasks:hover{
+.pending-tasks:hover {
   background-color: rgba(94, 139, 244, 0.371);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
 }

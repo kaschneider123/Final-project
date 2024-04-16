@@ -147,7 +147,7 @@ const _handleUpDate = async () => {
 }
 
 .btn-save:hover {
-  background-color: rgba(94, 139, 244, 0.371);
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  background-color: #29ea26;
+  color: black;
 }
 </style>

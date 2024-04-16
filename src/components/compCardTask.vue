@@ -84,12 +84,10 @@ onMounted(() => {
 </template>
 
 <style scoped>
-
 h4 {
   font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif; 
-  color: rgb(0, 0, 129); 
-  
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(0, 0, 129);
 }
 .container-principal {
   width: 750px;
@@ -262,15 +260,13 @@ h4 {
   background: rgba(32, 95, 242, 0.646);
 }
 
-
 /* Medias query ************************** */
 
 @media only screen and (max-width: 768px) {
-
   .container-principal {
-  width: 750px;
-}
-  .container-principal {   
+    width: 750px;
+  }
+  .container-principal {
     margin-top: 100px;
     display: flex;
     flex-direction: column;
@@ -338,7 +334,7 @@ h4 {
 @media only screen and (max-width: 514px) {
   .background-color {
     background-color: white;
-    max-width: 350px;   
+    max-width: 350px;
   }
   .container-principal {
     margin: 0 auto;
@@ -399,5 +395,6 @@ h4 {
   .list-task .color-par {
     width: 250px;
   }
+
 }
 </style>

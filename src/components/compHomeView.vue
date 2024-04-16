@@ -55,7 +55,7 @@ const goToTaskView = () => {
 }
 
 h1 {
-  font-size: 55px;
+  font-size: 48px;
   font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 15px;
   color: rgb(0, 0, 129);
@@ -68,7 +68,7 @@ ul {
 }
 
 li {
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .video_background {
@@ -129,16 +129,14 @@ a:hover {
   }
 } */
 
-@media only screen and (min-width:419px) and (max-width: 990px) {
+@media only screen and (min-width: 419px) and (max-width: 990px) {
   .container-list {
     font-size: 15px;
     align-items: center;
     justify-content: center;
-    
   }
   .container-list p {
     font-size: 16px;
-
   }
 
   h1 {
@@ -147,7 +145,6 @@ a:hover {
     margin-bottom: 15px;
     color: rgb(0, 0, 129);
     font-weight: bold;
-  
   }
 
   ul {
@@ -156,25 +153,24 @@ a:hover {
   a {
     position: absolute;
     top: 70%;
-  left: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
   }
   .container {
     margin-top: 100px;
-
-}
+  }
 }
 
 @media only screen and (max-width: 418px) {
   .container {
     margin-top: 100px;
-
-}
+    width: 100%;
+    height: 100%;
+  }
   .container-list {
     font-size: 15px;
     align-items: center;
     justify-content: center;
-
   }
   .container-list p {
     font-size: 13px;
@@ -182,11 +178,10 @@ a:hover {
 
   .container-list h1 {
     font-size: 30px;
-   
   }
   a {
     position: absolute;
-    top: 60%!important;
+    top: 70% !important;
     left: 50%;
     transform: translate(-50%, -50%);
   }

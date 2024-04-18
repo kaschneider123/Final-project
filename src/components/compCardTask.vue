@@ -3,7 +3,7 @@ import { useTasksStore } from '@/stores/tasksStore'
 import { storeToRefs } from 'pinia'
 import { ref, computed, onMounted } from 'vue'
 import CompEditTask from '@/components/compEditTask.vue'
-/* import SelectionBar from '@/components/SelectionBar.vue' */
+import SelectionBar from '@/components/SelectionBar.vue'
 
 const title = ref('')
 const description = ref('')
@@ -17,7 +17,6 @@ const _addTask = async () => {
   description.value = ''
 }
 
-// selection bar - FILTER TASK FUNCTION
 const filter = ref('all')
 
 const filteredTasks = computed(() => {
@@ -53,17 +52,13 @@ onMounted(() => {
         <label for="title"
           ><input v-model="title" type="text" placeholder="Title" id="title"
         /></label>
-
         <label class="label-description" for="description">
           <textarea v-model="description" type="text" placeholder="Description" id="description" />
         </label>
-
         <h4>Filters</h4>
         <SelectionBar @filter="filterTasks" />
         <button @click="_addTask" class="btn-add">Add</button>
       </div>
-
-      <!-- Contenedor list Tasks -->
       <div class="container-list">
         <p>List of tasks</p>
         <span> You have {{ numTasks }} tasks:</span>
@@ -121,8 +116,8 @@ h4 {
 /*Imagen de fondo*/
 .hero-image {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 1000px;
   top: 0;
   left: 0;
   z-index: -1;
@@ -261,7 +256,6 @@ h4 {
 }
 
 /* Medias query ************************** */
-
 @media only screen and (max-width: 768px) {
   .container-principal {
     width: 750px;
@@ -331,7 +325,13 @@ h4 {
     padding-left: 30px;
   }
 }
-@media only screen and (max-width: 514px) {
+@media only screen and (max-width: 510px) {
+  .input-list {
+    display: flex;
+    flex-direction: column;
+    max-height: 400px;
+    overflow-x: hidden;
+  }
   .background-color {
     background-color: white;
     max-width: 350px;
@@ -357,12 +357,6 @@ h4 {
     max-width: 320px;
   }
 
-  .container-list {
-    display: flex;
-    flex-direction: column;
-    max-width: 320px;
-    overflow-x: hidden;
-  }
   .list-task {
     max-width: 300px;
     height: 100%;
@@ -395,6 +389,8 @@ h4 {
   .list-task .color-par {
     width: 250px;
   }
-
+  .input-list:last-child {
+    padding-bottom: 50px;
+  }
 }
 </style>

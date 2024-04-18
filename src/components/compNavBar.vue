@@ -51,6 +51,7 @@ const toggleMenu = () => {
 </template>
 
 <style scoped>
+
 .title-mobile {
   display: none !important;
 }
@@ -63,6 +64,8 @@ const toggleMenu = () => {
 
 .container {
   display: flex;
+  gap: 10px;
+  
 }
 
 .navbar {
@@ -74,7 +77,7 @@ const toggleMenu = () => {
   left: 0;
   width: 100%;
   z-index: 10;
-  font-size: 18px;
+  font-size: 19px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -115,11 +118,12 @@ nav a.router-link-exact-active {
 
 nav a.router-link-exact-active:hover {
   background-color: transparent;
+ 
 }
 
 nav a {
   display: inline-block;
-  padding: 0 1rem;
+  padding: 0 2rem;
   border-left: 1px solid var(--color-border);
 }
 
@@ -173,7 +177,7 @@ nav a:first-of-type {
     font-weight: bold;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 510px) {
   .nav-toggle {
     margin-left: 330px;
   }

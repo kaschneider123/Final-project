@@ -1,6 +1,6 @@
 <script setup>
-import compHomeView from '../components/compHomeView.vue'
-import compNavBar from '../components/compNavBar.vue'
+import compHomeView from '@/components/compHomeView.vue'
+import compNavBar from '@/components/compNavBar.vue'
 </script>
 
 <template>

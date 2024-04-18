@@ -105,31 +105,7 @@ a:hover {
 }
 
 /* Medias Queries******************************************************************/
-/* @media only screen and (min-width: 769px) and (max-width: 1023px) {
-  .container-list {
-    font-size: 15px;
-    align-items: center;
-    justify-content: center;
-  }
-  .container-list p {
-    font-size: 20px;
-  }
-
-  h1 {
-    font-size: 50px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 15px;
-    color: rgb(0, 0, 129);
-    font-weight: bold;
-    margin: 70px;
-  }
-
-  ul {
-    margin-top: 0px;
-  }
-} */
-
-@media only screen and (min-width: 419px) and (max-width: 990px) {
+@media only screen and (max-width: 768px) {
   .container-list {
     font-size: 15px;
     align-items: center;

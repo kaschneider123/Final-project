@@ -1,8 +1,8 @@
 <script setup>
 import { defineEmits } from 'vue'
-// Define the events this component can emit
+
 const emit = defineEmits(['filter'])
-// Method to emit the selected filter type
+
 const emitFilter = (filter) => {
   emit('filter', filter)
 }
@@ -11,7 +11,6 @@ const emitFilter = (filter) => {
 <template>
   <div class="selection-bar">
     <button @click="emitFilter('all')" class="all-tasks">All Tasks</button>
-    <!-- This button is for selecting all tasks -->
     <button @click="emitFilter('completed')" class="completed-tasks">Completed</button>
     <button @click="emitFilter('pending')" class="pending-tasks">Pending</button>
   </div>
@@ -72,5 +71,3 @@ const emitFilter = (filter) => {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
 }
 </style>
-
-.all-tasks {}

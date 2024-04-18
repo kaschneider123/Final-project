@@ -1,11 +1,23 @@
 <script setup>
 import { useRouter } from 'vue-router'
+import { getFileFromBucket } from '@/api/storageApi'
+import { onMounted, ref } from 'vue'
 
 const router = useRouter()
+
+const _videoURL = ref('')
 
 const goToTaskView = () => {
   router.push('/Tasks')
 }
+
+onMounted(async () => {
+  try {
+    _videoURL.value = await getFileFromBucket('assets', 'videoToDo.mp4')
+  } catch (err) {
+    console.error(err)
+  }
+})
 </script>
 
 <template>
@@ -21,14 +33,7 @@ const goToTaskView = () => {
       </ul>
     </div>
     <div class="video-container">
-      <video
-        class="video_background"
-        src="https://videos.pexels.com/video-files/5717426/5717426-hd_1920_1080_25fps.mp4"
-        alt=""
-        autoplay
-        loop
-        muted
-      ></video>
+      <video class="video_background" :src="_videoURL" alt="" autoplay loop muted></video>
     </div>
     <a @click="goToTaskView">Begin Tasks</a>
   </div>

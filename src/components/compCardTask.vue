@@ -156,6 +156,11 @@ h4 {
   flex-direction: column;
   max-height: 450px;
   overflow-x: hidden;
+  margin-left: 0px;
+  margin-right: 1rem;
+  width: 100%;
+  height: 100%;
+  max-width: 450px;
 }
 .list-task .color-par {
   background-color: #abb3ff2e;
@@ -178,10 +183,9 @@ h4 {
 }
 
 .list-task {
-  max-width: 500px;
+  max-width: 400px;
   height: 100%;
   font-size: 12px;
-  margin-top: 20px;
 }
 
 .list-task input {
@@ -191,9 +195,12 @@ h4 {
 /* Estilos para los container  Card*/
 .container-principal {
   margin-top: 100px;
-  padding: 15px;
+  padding: 20px;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 .container-card ::placeholder {
   padding-left: 10px;
@@ -258,9 +265,10 @@ h4 {
 /* Medias query ************************** */
 @media only screen and (max-width: 768px) {
   .container-principal {
-    width: 750px;
+    max-width: 750px;
   }
   .container-principal {
+    padding: 25px;
     margin-top: 100px;
     display: flex;
     flex-direction: column;
@@ -276,7 +284,7 @@ h4 {
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
   }
   .container-card {
-    max-width: 400px;
+    width: 90%;
     flex-direction: column;
     text-align: left;
     height: 100%;
@@ -329,18 +337,22 @@ h4 {
   .input-list {
     display: flex;
     flex-direction: column;
-    max-height: 400px;
+    max-width: 300px;
     overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    margin-left: 0px;
+    margin-right: 1rem;
   }
   .background-color {
     background-color: white;
-    max-width: 350px;
+    max-width: 320px;
   }
   .container-principal {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 70px;
   }
 
   .container-card {
@@ -349,7 +361,6 @@ h4 {
     height: 100%;
     background-color: #edf0ff80;
     display: flex;
-    padding: 10px;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
     padding-left: 20px;
     padding-bottom: 10px;
@@ -358,15 +369,15 @@ h4 {
   }
 
   .list-task {
-    max-width: 300px;
+    max-width: 280px;
+    width: 100%;
     height: 100%;
     font-size: 12px;
-    margin-top: 20px;
+    align-items: center;
+    justify-content: center;  
   }
   .container-card input {
     display: flex;
-    margin-top: 10px;
-    margin-bottom: 30px;
     height: 32px;
     border-radius: 5px;
     border: none;
@@ -382,7 +393,6 @@ h4 {
     width: 290px;
   }
   .container-general {
-    /*  background-color: #8995fc2e; */
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
     width: 250px;
   }

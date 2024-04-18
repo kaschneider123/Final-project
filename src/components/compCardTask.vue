@@ -3,7 +3,7 @@ import { useTasksStore } from '@/stores/tasksStore'
 import { storeToRefs } from 'pinia'
 import { ref, computed, onMounted } from 'vue'
 import CompEditTask from '@/components/compEditTask.vue'
-import SelectionBar from '@/components/SelectionBar.vue'
+/* import SelectionBar from '@/components/SelectionBar.vue' */
 
 const title = ref('')
 const description = ref('')
@@ -195,7 +195,7 @@ h4 {
 
 /* Estilos para los container  Card*/
 .container-principal {
-  margin-top: 70px;
+  margin-top: 100px;
   padding: 15px;
   display: flex;
   flex-direction: row;

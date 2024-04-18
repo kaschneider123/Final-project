@@ -179,7 +179,7 @@ nav a:first-of-type {
 }
 @media only screen and (max-width: 510px) {
   .nav-toggle {
-    margin-left: 330px;
+    margin-left: 300px;
   }
   .nav-menu {
     display: none;

@@ -23,11 +23,10 @@ const goToTaskView = () => {
     <div class="video-container">
       <video
         class="video_background"
-        src="../assets/videoToDo.mp4"
+        src="https://videos.pexels.com/video-files/5717426/5717426-hd_1920_1080_25fps.mp4"
         alt=""
         autoplay
-        loopTo-Do
-        List
+        loop
         muted
       ></video>
     </div>

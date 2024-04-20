@@ -52,7 +52,6 @@ const _changeSignType = () => {
       <div class="label-one">
         <label for="loginUser">Email:</label>
         <input v-model="loginUser" type="email" placeholder="Email" />
-
         <label for="loginPassword">Password:</label>
         <input v-model="loginPassword" type="password" placeholder="Password" />
         <button class="btn-login-one" @click="signIn">Log in</button>

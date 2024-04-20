@@ -47,6 +47,7 @@ onMounted(() => {
   <section class="background-color">
     <div class="container-principal">
       <!-- Contenedor Add -->
+
       <div class="container-card">
         <h2>Add a new task</h2>
         <label for="title"
@@ -55,10 +56,11 @@ onMounted(() => {
         <label class="label-description" for="description">
           <textarea v-model="description" type="text" placeholder="Description" id="description" />
         </label>
-        <h4>Filters</h4>
+        <!-- <h4>Filters</h4> -->
         <SelectionBar @filter="filterTasks" />
         <button @click="_addTask" class="btn-add">Add</button>
       </div>
+
       <div class="container-list">
         <p>List of tasks</p>
         <span> You have {{ numTasks }} tasks:</span>
@@ -79,13 +81,14 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.list-task {
+  padding-left: 20px;
+}
+
 h4 {
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(0, 0, 129);
-}
-.container-principal {
-  width: 750px;
 }
 
 .li:last-child {
@@ -150,7 +153,6 @@ h4 {
   box-sizing: border-box;
   height: auto;
 }
-
 .input-list {
   display: flex;
   flex-direction: column;
@@ -198,9 +200,11 @@ h4 {
   padding: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
   width: 100%;
+  max-width: 900px;
+}
+.container-principal {
+  width: 750px;
 }
 .container-card ::placeholder {
   padding-left: 10px;
@@ -224,8 +228,6 @@ h4 {
   font-family: Arial, Helvetica, sans-serif;
 }
 .container-card {
-  text-align: left;
-  height: 500px;
   background-color: #edf0ff80;
   display: flex;
   flex-direction: column;
@@ -266,24 +268,16 @@ h4 {
 @media only screen and (max-width: 768px) {
   .container-principal {
     max-width: 750px;
-  }
-  .container-principal {
+    width: 100%;
     padding: 25px;
     margin-top: 100px;
     display: flex;
     flex-direction: column;
   }
-  .container-card input {
-    width: 200px;
-    display: flex;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height: 32px;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
-  }
+
   .container-card {
+    max-width: 550px;
+    width: 100%;
     width: 90%;
     flex-direction: column;
     text-align: left;
@@ -295,6 +289,17 @@ h4 {
     padding-left: 30px;
     padding-bottom: 20px;
     align-items: center;
+  }
+
+  .container-card input {
+    width: 200px;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 32px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
   }
   .btn-add {
     background-color: #0052cc;
@@ -334,7 +339,91 @@ h4 {
   }
 }
 @media only screen and (max-width: 510px) {
+  .list-task{
+    padding: 0;
+  }
+  .container-principal {
+    max-width: 350px;
+    width: 100%;    
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .container-card {
+    max-width: 350px;
+    width: 100%;  
+    flex-direction: column;  
+    height: 100%;
+    display: flex;
+    padding-left: 0px;
+  }
+
+  .container-card input {
+    width: 180px;
+    display: flex;
+    height: 32px;   
+
+  }
+  .btn-add {
+    background-color: #0052cc;
+    border: none;
+    height: 35px;
+    width: 180px;
+  }
+  .container-card h3 {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .container-card textarea {
+    width: 180px;
+    font-size: 12px;
+
+  
+  }
   .input-list {
+    display: flex;
+    flex-direction: column;
+    max-height: 450px;
+    overflow-x: hidden;
+  }
+  .container-list p {
+    padding-top: 10px;
+    padding-left: 5px;
+  }
+  .container-list span {
+    padding-left: 5px;
+  }
+  .list-task {
+    max-width: 280px;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .input-list {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    margin-left: 0px;
+    margin-right: 1rem;
+  }
+
+  .list-task .color-par {
+    width: 100%;
+  }
+
+
+
+
+
+  /******************************************** */
+/*  .input-list {
     display: flex;
     flex-direction: column;
     max-width: 300px;
@@ -346,7 +435,8 @@ h4 {
   }
   .background-color {
     background-color: white;
-    max-width: 320px;
+    max-width: 350px;
+    width: 100%;
   }
   .container-principal {
     margin: 0 auto;
@@ -374,7 +464,7 @@ h4 {
     height: 100%;
     font-size: 12px;
     align-items: center;
-    justify-content: center;  
+    justify-content: center;
   }
   .container-card input {
     display: flex;
@@ -401,6 +491,6 @@ h4 {
   }
   .input-list:last-child {
     padding-bottom: 50px;
-  }
-}
+  }  */
+} 
 </style>

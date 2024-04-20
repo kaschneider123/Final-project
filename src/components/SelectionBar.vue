@@ -24,6 +24,7 @@ const emitFilter = (filter) => {
   padding-top: 20px;
 }
 .all-tasks {
+  font-family: Arial, Helvetica, sans-serif;
   justify-content: flex-end;
   width: 55px;
   height: 25px;
@@ -37,6 +38,7 @@ const emitFilter = (filter) => {
 }
 
 .completed-tasks {
+  font-family: Arial, Helvetica, sans-serif;
   justify-content: flex-end;
   width: 65px;
   height: 25px;
@@ -48,6 +50,7 @@ const emitFilter = (filter) => {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
 }
 .pending-tasks {
+  font-family: Arial, Helvetica, sans-serif;
   justify-content: flex-end;
   width: 55px;
   height: 25px;
@@ -69,5 +72,30 @@ const emitFilter = (filter) => {
 .pending-tasks:hover {
   background-color: rgba(94, 139, 244, 0.371);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 510px) {
+  .selection-bar {
+    display: flex;
+    justify-content: space-around;
+    gap: 7px;
+    padding-top: 20px;
+  }
+  .all-tasks {
+    width: 50px;
+    height: 25px;
+    font-size: 9px;
+  }
+
+  .completed-tasks {
+    width: 60px;
+    height: 25px;
+    font-size: 9px;
+  }
+  .pending-tasks {
+    width: 50px;
+    height: 25px;
+    font-size: 9px;
+  }
 }
 </style>

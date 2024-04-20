@@ -74,7 +74,7 @@ const _handleUpDate = async () => {
 .div-btns {
   display: flex;
   justify-content: flex-end;
-  gap: 12px;
+  gap: 12px;  
 }
 
 .btn {
@@ -89,9 +89,10 @@ const _handleUpDate = async () => {
   gap: 10px;
 }
 .container-general {
-  /*  background-color: #8995fc2e; */
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
-  width: 350px;
+  max-width: 350px;
+  width: 100%;
+
 }
 .container-input input {
   background-color: white;

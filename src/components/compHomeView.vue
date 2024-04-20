@@ -161,7 +161,7 @@ a:hover {
   }
   a {
     position: absolute;
-    top: 70% !important;
+    top: 50% !important;
     left: 50%;
     transform: translate(-50%, -50%);
   }

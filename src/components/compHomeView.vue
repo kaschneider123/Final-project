@@ -42,9 +42,10 @@ onMounted(async () => {
 <style scoped>
 .container {
   background-color: rgba(255, 255, 255, 0.5);
-  padding: 20px;
+  padding: 40px;
   border-radius: 25px;
   box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.5);
+  margin-top: 100px;
 }
 .video-container {
   width: 100%;
@@ -56,8 +57,8 @@ onMounted(async () => {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 25px;
   color: rgb(61, 61, 61);
+  width: 100%;
 }
-
 h1 {
   font-size: 48px;
   font-family: Arial, Helvetica, sans-serif;
@@ -88,20 +89,21 @@ li {
 
 a {
   position: absolute;
-  top: 80%;
+  top: 75%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 38px;
-  width: 180px;
+  height: 52px;
+  width: 250px;
   background-color: #0052cc;
   text-align: center;
   color: white;
   font-family: Arial, sans-serif;
-  line-height: 34px;
+  line-height: 42px;
   border-radius: 10px;
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
   z-index: 1;
   font-weight: bold;
+  font-size: 18px;
 }
 
 a:hover {
@@ -132,12 +134,14 @@ a:hover {
   }
   a {
     position: absolute;
-    top: 70%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    height: 50px;
+    width: 220px;
   }
   .container {
-    margin-top: 100px;
+    margin-top: 150px;
   }
 }
 
@@ -161,9 +165,11 @@ a:hover {
   }
   a {
     position: absolute;
-    top: 50% !important;
+    top: 40% !important;
     left: 50%;
     transform: translate(-50%, -50%);
+    height: 47px;
+    width: 200px;
   }
 }
 </style>

@@ -184,6 +184,7 @@ btn-login-one:hover {
   gap: 20px;
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
   font-family: Arial, Helvetica, sans-serif;
+  margin-top: 100px;
 }
 
 .container-register .btn-login,
@@ -219,10 +220,17 @@ btn-login-one:hover {
   background-color: rgb(42, 42, 176);
   color: white;
 }
-/* @media only screen and (max-width: 768px) {
-
+@media only screen and (max-width: 768px) {
 }
 @media only screen and (max-width: 510px) {
-
-} */
+  .container-register,
+  .container-logIn {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    width: 350px;
+    height: 400px;
+    gap: 8px;
+  }
+}
 </style>

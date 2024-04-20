@@ -103,7 +103,6 @@ h2 {
   font-size: 17px;
   text-align: center;
 }
-
 h2 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 25px;
@@ -115,7 +114,6 @@ h2 {
   flex-direction: column;
   gap: 10px;
 }
-
 .btn-login-one {
   width: 220px;
   background-color: #0052cc;
@@ -125,11 +123,9 @@ h2 {
   border-radius: 5px;
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
 }
-
 btn-login-one:hover {
   background-color: rgb(176, 55, 42);
 }
-
 .container-logIn label {
   display: flex;
   text-align: left;
@@ -139,9 +135,7 @@ btn-login-one:hover {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  /*   gap: 5px; */
 }
-
 .container-logIn input {
   width: 220px;
   height: 25px;
@@ -150,7 +144,6 @@ btn-login-one:hover {
   border-radius: 5px solid 0.5;
   font-size: 15px;
 }
-
 .container-logIn {
   margin: 0 auto;
   padding: 20px;
@@ -164,13 +157,11 @@ btn-login-one:hover {
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
   font-family: Arial, Helvetica, sans-serif;
 }
-
 .container-register label {
   display: flex;
   text-align: left;
   font-size: 15px;
 }
-
 .container-register {
   margin: 0 auto;
   padding: 20px;
@@ -199,7 +190,6 @@ btn-login-one:hover {
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
   font-size: 16px;
 }
-
 .container-register input {
   width: 220px;
   height: 25px;
@@ -220,15 +210,15 @@ btn-login-one:hover {
   background-color: rgb(42, 42, 176);
   color: white;
 }
-@media only screen and (max-width: 768px) {
-}
+
 @media only screen and (max-width: 510px) {
   .container-register,
   .container-logIn {
     margin-top: 100px;
     display: flex;
     align-items: center;
-    width: 350px;
+    max-width: 300px;
+    width: 100%;
     height: 400px;
     gap: 8px;
   }

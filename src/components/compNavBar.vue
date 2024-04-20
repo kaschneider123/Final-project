@@ -51,7 +51,6 @@ const toggleMenu = () => {
 </template>
 
 <style scoped>
-
 .title-mobile {
   display: none !important;
 }
@@ -61,13 +60,10 @@ const toggleMenu = () => {
 .nav-menu {
   display: none;
 }
-
 .container {
   display: flex;
   gap: 10px;
-  
 }
-
 .navbar {
   background-color: white;
   opacity: 90%;
@@ -85,7 +81,6 @@ const toggleMenu = () => {
 }
 
 .btn-log-out {
-  /*   display: flex; */
   justify-content: center;
   align-content: center;
   border: none;
@@ -104,35 +99,28 @@ header {
   line-height: 1.5;
   max-height: 100vh;
 }
-
 nav {
   width: 100%;
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;
 }
-
 nav a.router-link-exact-active {
   color: var(--color-text);
 }
-
 nav a.router-link-exact-active:hover {
   background-color: transparent;
- 
 }
-
 nav a {
   display: inline-block;
   padding: 0 2rem;
   border-left: 1px solid var(--color-border);
 }
-
 nav a:first-of-type {
   border: 0;
 }
 
 /***************************************/
-
 @media only screen and (min-width: 768px) {
   .title-mobile {
     display: none;
@@ -140,7 +128,6 @@ nav a:first-of-type {
   .nav-menu {
     display: none;
   }
-
   .show-menu {
     display: none;
   }
@@ -150,7 +137,6 @@ nav a:first-of-type {
   .container {
     display: block;
   }
-
   .nav-menu {
     position: absolute;
     top: 100%;
@@ -160,16 +146,12 @@ nav a:first-of-type {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
   }
-
   .btn-log-out {
-    /* display: flex; */
     justify-content: center;
     align-content: center;
     border: none;
     background-color: rgba(255, 255, 255, 0.998);
     font-size: 15px;
-    /* position: absolute; */
-    /* right: 0; */
     margin-right: 40px;
     padding-top: 8px;
     color: rgb(201, 0, 0);
@@ -177,6 +159,7 @@ nav a:first-of-type {
     font-weight: bold;
   }
 }
+
 @media only screen and (max-width: 510px) {
   .nav-toggle {
     margin-left: 300px;
@@ -184,7 +167,6 @@ nav a:first-of-type {
   .nav-menu {
     display: none;
   }
-
   .show-menu {
     display: block;
   }
@@ -203,11 +185,9 @@ nav a:first-of-type {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
   }
-
   .nav-toggle {
     display: block;
   }
-
   .title-mobile {
     display: block !important;
   }

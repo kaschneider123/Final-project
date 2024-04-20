@@ -16,7 +16,7 @@ const router = createRouter({
       name: 'login',
       component: () => import('../views/LoginView.vue')
     },
- /*    {
+    /*    {
       path: '/about',
       name: 'about',
       component: () => import('../views/AboutView.vue'),
@@ -27,8 +27,8 @@ const router = createRouter({
       name: 'tasks',
       component: () => import('../views/TaskView.vue'),
       meta: { requiresAuth: true }
-    },
-/*     {
+    }
+    /*     {
       path: '/edit',
       name: 'edit',
       component: () => import('../views/editView.vue'),

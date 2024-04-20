@@ -36,7 +36,6 @@ const emitFilter = (filter) => {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
   font-weight: 500;
 }
-
 .completed-tasks {
   font-family: Arial, Helvetica, sans-serif;
   justify-content: flex-end;
@@ -86,7 +85,6 @@ const emitFilter = (filter) => {
     height: 25px;
     font-size: 9px;
   }
-
   .completed-tasks {
     width: 60px;
     height: 25px;

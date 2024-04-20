@@ -34,7 +34,6 @@ export const useUserStore = defineStore('user', () => {
     }
   }
 
-
   async function signOut() {
     try {
       user.value = await logout()
@@ -53,13 +52,13 @@ export const useUserStore = defineStore('user', () => {
 
   async function validateEmail(email) {
     return new Promise((resolve, reject) => {
-      const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
       if (!validEmail.test(email)) {
-        reject("Por favor ingrese un correo electrónico válido.");
+        reject('Por favor ingrese un correo electrónico válido.')
       } else {
-        resolve(true);
+        resolve(true)
       }
-    });
+    })
   }
 
   return {

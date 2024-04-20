@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue'
 import { useTasksStore } from '@/stores/tasksStore'
-/* import Confirmation from './Confirmation.vue'; */
 
 const tasksStore = useTasksStore()
 
@@ -74,7 +73,7 @@ const _handleUpDate = async () => {
 .div-btns {
   display: flex;
   justify-content: flex-end;
-  gap: 12px;  
+  gap: 12px;
 }
 
 .btn {
@@ -92,7 +91,6 @@ const _handleUpDate = async () => {
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
   max-width: 350px;
   width: 100%;
-
 }
 .container-input input {
   background-color: white;
@@ -148,7 +146,7 @@ const _handleUpDate = async () => {
 }
 
 .btn-save:hover {
-  background-color: #29ea26;
-  color: black;
+  background-color: rgba(94, 139, 244, 0.371);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
 }
 </style>

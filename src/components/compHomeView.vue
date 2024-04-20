@@ -4,7 +4,6 @@ import { getFileFromBucket } from '@/api/storageApi'
 import { onMounted, ref } from 'vue'
 
 const router = useRouter()
-
 const _videoURL = ref('')
 
 const goToTaskView = () => {
@@ -42,7 +41,7 @@ onMounted(async () => {
 <style scoped>
 .container {
   background-color: rgba(255, 255, 255, 0.5);
-  padding: 40px;
+  padding: 25px;
   border-radius: 25px;
   box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.5);
   margin-top: 100px;
@@ -66,16 +65,13 @@ h1 {
   color: rgb(0, 0, 129);
   font-weight: bold;
 }
-
 ul {
   list-style-type: none;
   padding: 0;
 }
-
 li {
-  font-size: 17px;
+  font-size: 19px;
 }
-
 .video_background {
   position: absolute;
   top: 0;
@@ -86,13 +82,12 @@ li {
   opacity: 40%;
   z-index: -1;
 }
-
 a {
   position: absolute;
-  top: 75%;
+  top: 85%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 52px;
+  height: 50px;
   width: 250px;
   background-color: #0052cc;
   text-align: center;
@@ -105,12 +100,11 @@ a {
   font-weight: bold;
   font-size: 18px;
 }
-
 a:hover {
   background-color: rgb(42, 42, 176);
 }
 
-/* Medias Queries******************************************************************/
+/* Medias Queries*******************************************************/
 @media only screen and (max-width: 768px) {
   .container-list {
     font-size: 15px;
@@ -120,7 +114,6 @@ a:hover {
   .container-list p {
     font-size: 16px;
   }
-
   h1 {
     font-size: 45px;
     font-family: Arial, Helvetica, sans-serif;
@@ -128,13 +121,12 @@ a:hover {
     color: rgb(0, 0, 129);
     font-weight: bold;
   }
-
   ul {
     margin-top: 0px;
   }
   a {
     position: absolute;
-    top: 50%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 50px;
@@ -145,7 +137,7 @@ a:hover {
   }
 }
 
-@media only screen and (max-width: 418px) {
+@media only screen and (max-width: 418px) {  
   .container {
     margin-top: 100px;
     width: 100%;
@@ -165,7 +157,7 @@ a:hover {
   }
   a {
     position: absolute;
-    top: 40% !important;
+    top: 65% !important;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 47px;

@@ -49,6 +49,7 @@ onMounted(() => {
       <!-- Contenedor Add -->
       <div class="container-card">
         <h2>Add a new task</h2>
+        <span>Minimum 3 characters</span>
         <label for="title"
           ><input v-model="title" type="text" placeholder="Title" id="title"
         /></label>
@@ -79,6 +80,9 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.container-card span {
+  font-size: 12px;
+}
 .list-task {
   padding-left: 20px;
 }

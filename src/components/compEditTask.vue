@@ -1,6 +1,7 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, defineProps } from 'vue'
 import { useTasksStore } from '@/stores/tasksStore'
+import compConfirmation from '@/components/compConfirmation.vue'
 
 const tasksStore = useTasksStore()
 
@@ -29,36 +30,73 @@ const _editTask = async () => {
   }
 }
 
-const _handleUpDate = async () => {
+const handleUpdateState = async () => {
   try {
     await _editTask()
   } catch (error) {
     console.error('Error al actualizar la tarea....', error)
   }
 }
+
+const isDialogVisible = ref(false)
+
+const deleteTask = async (taskId) => {}
+
+const confirmDelete = () => {
+  deleteTask(taskId)
+  isDialogVisible.value = false
+}
 </script>
+
 <template>
   <div class="container-general">
     <div class="btn">
-      <input @change="_handleUpDate" type="checkbox" v-model="editTask.is_complete" />
+      <input @change="handleUpdateState" type="checkbox" v-model="editTask.is_complete" />
       {{ editTask.title }}
-      <!-- {{ editTask.description }} -->
       <div class="div-btns">
-        <button @click="_deleteTask" class="btn-delete">Delete</button>
+        <button @click="isDialogVisible = true" class="btn-delete">Delete</button>
         <button @click="_handleEdit" class="btn-edit">Edit</button>
       </div>
     </div>
-    <div class="container-input" v-show="_isEditing">
+
+    <compConfirmation
+      :isVisible="isDialogVisible"
+      @confirm="_deleteTask"
+      @cancel="() => (isDialogVisible = false)"
+    />
+  </div>
+
+  <div class="container-input" v-show="_isEditing">
+    <input type="text" v-model="editTask.title" />
+    <input type="text" v-model="editTask.description" />
+    <div class="check-btn-save">
+      <button @click="_editTask" class="btn-save">Save</button>
+    </div>
+  </div>
+</template>
+
+<!-- <template>
+  <div class="container-general">
+    <div class="btn">
+      <input @change="_handleUpDate" type="checkbox" v-model="editTask.is_complete" />
+      {{ editTask.title }} -->
+<!-- {{ editTask.description }} -->
+<!--       <div class="div-btns">
+        <button @click="_deleteTask" class="btn-delete">Delete</button>
+        <button @click="_handleEdit" class="btn-edit">Edit</button>
+      </div>
+    </div> -->
+<!-- <div class="container-input" v-show="_isEditing">
       <input type="text" v-model="editTask.title" />
       <input type="text" v-model="editTask.description" />
 
       <div class="check-btn-save">
         <button @click="_editTask" class="btn-save">Save</button>
         <!-- {{ editTask.is_complete ? 'Completed' : 'Incomplete' }} -->
-      </div>
+<!-- </div>
     </div>
   </div>
-</template>
+</template>-->
 
 <style scoped>
 .check-btn-save {
@@ -149,4 +187,6 @@ const _handleUpDate = async () => {
   background-color: rgba(94, 139, 244, 0.371);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
 }
+
+
 </style>

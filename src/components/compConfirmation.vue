@@ -1,9 +1,10 @@
 <script setup>
 import { defineProps, defineEmits } from 'vue'
 
-const props = defineProps({
+defineProps({
   isVisible: Boolean
 })
+
 const emit = defineEmits(['confirm', 'cancel'])
 const confirmDelete = () => {
   emit('confirm')
@@ -50,12 +51,12 @@ button {
 }
 
 .btn-no:hover {
-  background-color: rgba(255, 43, 43, 0.515);
+  background-color: rgba(94, 139, 244, 0.371);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
 .btn-yes:hover {
-  background-color: rgba(17, 173, 106, 0.566);
+  background-color: rgba(94, 139, 244, 0.371);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
 }
 

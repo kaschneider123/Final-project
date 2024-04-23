@@ -44,7 +44,6 @@ onMounted(async () => {
   padding: 25px;
   border-radius: 25px;
   box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.5);
-  margin-top: 100px;
 }
 .video-container {
   width: 100%;
@@ -87,7 +86,7 @@ a {
   top: 85%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 50px;
+  height: 45px;
   width: 250px;
   background-color: #0052cc;
   text-align: center;
@@ -129,15 +128,15 @@ a:hover {
     top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 50px;
-    width: 220px;
+    height: 45px;
+    width: 200px;
   }
   .container {
     margin-top: 150px;
   }
 }
 
-@media only screen and (max-width: 418px) {  
+@media only screen and (max-width: 418px) {
   .container {
     margin-top: 100px;
     width: 100%;
@@ -160,7 +159,7 @@ a:hover {
     top: 65% !important;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 47px;
+    height: 45px;
     width: 200px;
   }
 }

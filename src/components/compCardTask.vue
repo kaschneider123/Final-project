@@ -48,6 +48,7 @@ onMounted(() => {
     <div class="container-principal">
       <!-- Contenedor Add -->
       <div class="container-card">
+        <!--  <h1>Welcome {{  }}</h1> -->
         <h2>Add a new task</h2>
         <span>Minimum 3 characters</span>
         <label for="title"
@@ -56,7 +57,6 @@ onMounted(() => {
         <label class="label-description" for="description">
           <textarea v-model="description" type="text" placeholder="Description" id="description" />
         </label>
-        <!-- <h4>Filters</h4> -->
         <SelectionBar @filter="filterTasks" />
         <button @click="_addTask" class="btn-add">Add</button>
       </div>
@@ -153,7 +153,7 @@ h4 {
   max-height: 450px;
   overflow-x: hidden;
   margin-left: 0px;
-  margin-right: 1rem;
+  margin-right: 2.0rem;
   width: 100%;
   height: 100%;
   max-width: 450px;
@@ -191,10 +191,6 @@ h4 {
   display: flex;
   flex-direction: row;
   width: 100%;
-  max-width: 900px;
-}
-.container-principal {
-  width: 750px;
 }
 .container-card ::placeholder {
   padding-left: 10px;
@@ -262,10 +258,12 @@ h4 {
     display: flex;
     flex-direction: column;
   }
+  .input-list {
+    margin-right: 0.5rem;
+  }
   .container-card {
     max-width: 550px;
-    width: 100%;
-    width: 90%;
+    width: 100%; 
     flex-direction: column;
     text-align: left;
     height: 100%;
@@ -328,7 +326,7 @@ h4 {
   }
 }
 @media only screen and (max-width: 510px) {
-    .list-task{
+  .list-task {
     padding: 8px;
   }
   .container-principal {

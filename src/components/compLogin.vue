@@ -64,6 +64,8 @@ const _changeSignType = () => {
     <div v-else class="container-register">
       <h2>Welcome to Your Task Spot!</h2>
       <div class="label">
+        <!-- <label for="loginName">Name</label>
+        <input v-model="registerName" type="text" placeholder="Name" /> -->
         <label for="loginUser">Email:</label>
         <input v-model="registerEmail" type="email" placeholder="Email" />
         <label for="loginPassword">Password:</label>

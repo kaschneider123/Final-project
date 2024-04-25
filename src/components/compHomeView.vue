@@ -125,7 +125,7 @@ a:hover {
   }
   a {
     position: absolute;
-    top: 75%;
+    top: 85%;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 45px;
@@ -156,7 +156,7 @@ a:hover {
   }
   a {
     position: absolute;
-    top: 65% !important;
+    top: 75% !important;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 45px;

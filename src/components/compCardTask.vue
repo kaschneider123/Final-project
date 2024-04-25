@@ -101,7 +101,7 @@ h4 {
 }
 .container-card textarea {
   width: 200px;
-  min-height: 70px;
+  /* min-height: 70px; */
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 5px;
@@ -153,7 +153,7 @@ h4 {
   max-height: 450px;
   overflow-x: hidden;
   margin-left: 0px;
-  margin-right: 2.0rem;
+  margin-right: 2rem;
   width: 100%;
   height: 100%;
   max-width: 450px;
@@ -191,6 +191,7 @@ h4 {
   display: flex;
   flex-direction: row;
   width: 100%;
+  width: 700px;
 }
 .container-card ::placeholder {
   padding-left: 10px;
@@ -251,7 +252,7 @@ h4 {
 /* Medias query ************************** */
 @media only screen and (max-width: 768px) {
   .container-principal {
-    max-width: 750px;
+    max-width: 700px;
     width: 100%;
     padding: 25px;
     margin-top: 100px;
@@ -263,7 +264,7 @@ h4 {
   }
   .container-card {
     max-width: 550px;
-    width: 100%; 
+    width: 100%;
     flex-direction: column;
     text-align: left;
     height: 100%;
@@ -345,23 +346,26 @@ h4 {
     padding-left: 0px;
   }
   .container-card input {
-    width: 180px;
+    max-width: 180px;
     display: flex;
     height: 32px;
+    /* width: 100%; */
   }
   .btn-add {
     background-color: #0052cc;
     border: none;
     height: 35px;
-    width: 180px;
+    max-width: 180px;
+    width: 100%;
   }
   .container-card h3 {
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
   }
   .container-card textarea {
-    width: 180px;
+    max-width: 180px;
     font-size: 12px;
+    /* width: 100%; */
   }
   .input-list {
     display: flex;

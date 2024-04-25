@@ -37,7 +37,7 @@ const toggleMenu = () => {
         </div>
         <!-- menú desplegable -->
         <div>
-          <h3 class="title-mobile">To Do list</h3>
+          <h3 class="title-mobile">To-Do List</h3>
           <ul class="nav-menu" :class="{ 'show-menu': isMenuOpen }">
             <li><RouterLink to="/">Home</RouterLink></li>
             <li><RouterLink to="/tasks">Tasks</RouterLink></li>
@@ -67,7 +67,7 @@ const toggleMenu = () => {
 .navbar {
   background-color: white;
   opacity: 90%;
-  height: 52px;
+  height: 55px;
   position: absolute;
   top: 0;
   left: 0;
@@ -81,18 +81,24 @@ const toggleMenu = () => {
 }
 
 .btn-log-out {
+  width: 80px;
   justify-content: center;
   align-content: center;
   border: none;
-  background-color: rgba(255, 255, 255, 0.998);
-  font-size: 15px;
+  font-size: 14px;
   position: absolute;
   right: 0;
   margin-right: 40px;
-  padding-top: 8px;
-  color: rgb(201, 0, 0);
-  border-radius: 5px;
-  font-weight: bold;
+  padding: 7px;
+  color: rgba(243, 57, 10, 0.864);
+  border-radius: 8px;
+  font-weight: 600px;
+  background-color: white;
+}
+.btn-log-out:hover {
+  background-color: rgba(32, 95, 242, 0.646);
+  color: white;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
 }
 
 header {
@@ -105,13 +111,19 @@ nav {
   text-align: center;
   margin-top: 2rem;
 }
-nav a.router-link-exact-active {
+/* nav a.router-link-exact-active {
   color: var(--color-text);
-}
-nav a.router-link-exact-active:hover {
+} */
+/* nav a.router-link-exact-active:hover {
   background-color: transparent;
+} */
+.navbar a:hover {
+  background-color: rgba(32, 95, 242, 0.646);
+  color: white;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
 }
-nav a {
+.navbar a {
   display: inline-block;
   padding: 0 2rem;
   border-left: 1px solid var(--color-border);
@@ -146,21 +158,25 @@ nav a:first-of-type {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
   }
-  .btn-log-out {
+  /*   .btn-log-out {
     justify-content: center;
     align-content: center;
     border: none;
-    background-color: rgba(255, 255, 255, 0.998);
+    background-color: rgba(218, 31, 31, 0.632);
     font-size: 15px;
     margin-right: 40px;
     padding-top: 8px;
-    color: rgb(201, 0, 0);
+    color: rgb(255, 255, 255);
     border-radius: 5px;
     font-weight: bold;
-  }
+  } */
 }
 
 @media only screen and (max-width: 510px) {
+/*   .btn-mobile {
+    background-color: rgb(84, 84, 195); /* Cambia el color de fondo aquí 
+    font-size: 24px;
+  } */
   .nav-toggle {
     margin-left: 300px;
   }
@@ -192,11 +208,11 @@ nav a:first-of-type {
     display: block !important;
   }
   .title-mobile {
-    color: rgb(0, 0, 129);
-    font-size: 25px;
+    color: #0052cc;
+    font-size: 22px;
     position: absolute;
     top: 10px;
-    left: 15px;
+    left: 25px;
     justify-content: center;
   }
 }

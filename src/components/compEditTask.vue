@@ -39,13 +39,6 @@ const handleUpdateState = async () => {
 }
 
 const isDialogVisible = ref(false)
-
-const deleteTask = async (taskId) => {}
-
-const confirmDelete = () => {
-  deleteTask(taskId)
-  isDialogVisible.value = false
-}
 </script>
 
 <template>
@@ -74,29 +67,6 @@ const confirmDelete = () => {
     </div>
   </div>
 </template>
-
-<!-- <template>
-  <div class="container-general">
-    <div class="btn">
-      <input @change="_handleUpDate" type="checkbox" v-model="editTask.is_complete" />
-      {{ editTask.title }} -->
-<!-- {{ editTask.description }} -->
-<!--       <div class="div-btns">
-        <button @click="_deleteTask" class="btn-delete">Delete</button>
-        <button @click="_handleEdit" class="btn-edit">Edit</button>
-      </div>
-    </div> -->
-<!-- <div class="container-input" v-show="_isEditing">
-      <input type="text" v-model="editTask.title" />
-      <input type="text" v-model="editTask.description" />
-
-      <div class="check-btn-save">
-        <button @click="_editTask" class="btn-save">Save</button>
-        <!-- {{ editTask.is_complete ? 'Completed' : 'Incomplete' }} -->
-<!-- </div>
-    </div>
-  </div>
-</template>-->
 
 <style scoped>
 .check-btn-save {
@@ -187,6 +157,4 @@ const confirmDelete = () => {
   background-color: rgba(94, 139, 244, 0.371);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
 }
-
-
 </style>

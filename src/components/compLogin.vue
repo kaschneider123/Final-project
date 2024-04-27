@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useUserStore } from '@/stores/userStore'
 import { useRouter } from 'vue-router'
+import { validateEmail, validatePassword } from '@/api/utils.js'
 
 const router = useRouter()
 const userStore = useUserStore()
@@ -17,24 +18,25 @@ const errorMessage = ref(null)
 //registrar un nuevo usuario
 const register = async () => {
   try {
-    await userStore.validateEmail(registerEmail.value)
+    await validateEmail(registerEmail.value)
+    await validatePassword(registerPassword.value)
     await userStore.signUp(registerEmail.value, registerPassword.value)
     router.push({ name: 'tasks' })
   } catch (error) {
     console.error(error)
-    window.alert('Por favor ingrese un correo electrónico válido.')
+    window.alert(error)
   }
 }
 
 //Iniciar sesión
 const signIn = async () => {
   try {
-    await userStore.validateEmail(loginUser.value)
+    await validateEmail(loginUser.value)
     await userStore.signIn(loginUser.value, loginPassword.value)
     router.push({ name: 'home' })
   } catch (error) {
     console.error(error)
-    window.alert('Por favor ingrese un correo electrónico válido.')
+    window.alert(error)
   }
 }
 
@@ -48,7 +50,7 @@ const _changeSignType = () => {
     <img class="hero-image" src="../assets/2.jpg" alt="" />
     <!-- Login -->
     <div v-if="signTypeLogin" class="container-logIn">
-      <h2>Welcome to Your Task Spot!</h2>
+      <h2>Welcome back!</h2>
       <div class="label-one">
         <label for="loginUser">Email:</label>
         <input v-model="loginUser" type="email" placeholder="Email" />
@@ -81,6 +83,9 @@ const _changeSignType = () => {
 </template>
 
 <style scoped>
+.container-logIn h2 {
+  margin-bottom: 25px;
+}
 h2 {
   display: flex;
   max-width: 200px;

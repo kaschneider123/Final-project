@@ -24,11 +24,9 @@ export const createNewUser = async (email, password) => {
     data: { user },
     error
   } = await supabase.auth.signUp({ email, password })
-
   if (error) {
     throw new Error(error.message)
   }
-
   return user
 }
 
@@ -37,12 +35,10 @@ export const logIn = async (email, password) => {
     data: { user },
     error
   } = await supabase.auth.signInWithPassword({ email, password })
-
   if (error) {
     console.error('Error de inicio de sesión en Supabase:', error)
     throw new Error(error.message)
   }
-
   return user
 }
 

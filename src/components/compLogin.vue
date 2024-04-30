@@ -49,7 +49,7 @@ const _changeSignType = () => {
   <div class="container-img">
     <img class="img-draw1" src="../assets/img-login.svg" alt="Planify" />
     <div v-if="signTypeLogin" class="container-logIn">
-      <img class="img-planify" src="../assets/planify.svg" alt="Planify" />
+      <img class="img-planify" src="../assets/logo-planify.svg" alt="Planify" />
       <h2>Welcome back!</h2>
       <div class="label-one">
         <label for="loginUser">Email:</label>

@@ -21,7 +21,7 @@ const register = async () => {
     await validateEmail(registerEmail.value)
     await validatePassword(registerPassword.value)
     await userStore.signUp(registerEmail.value, registerPassword.value)
-    router.push({ name: 'tasks' })
+    router.push({ name: 'home' })
   } catch (error) {
     console.error(error)
     window.alert(error)
@@ -47,9 +47,9 @@ const _changeSignType = () => {
 
 <template>
   <div class="container-img">
-    <img class="hero-image" src="../assets/2.jpg" alt="" />
-    <!-- Login -->
+    <img class="img-draw1" src="../assets/img-login.svg" alt="Planify" />
     <div v-if="signTypeLogin" class="container-logIn">
+      <img class="img-planify" src="../assets/planify.svg" alt="Planify" />
       <h2>Welcome back!</h2>
       <div class="label-one">
         <label for="loginUser">Email:</label>
@@ -79,13 +79,35 @@ const _changeSignType = () => {
       <p>Already have an account?</p>
       <button class="btn-login" @click="_changeSignType">Log in</button>
     </div>
+    <img class="img-draw2" src="../assets/img-login2.svg" alt="Planify" />
   </div>
 </template>
 
 <style scoped>
-.container-logIn h2 {
+.container-img {
+  display: flex;
+}
+.img-draw1 {
+  max-width: 25vw; /* El 50% del ancho de la ventana del navegador */
+  width: 100%; /* Ancho completo */
+  margin-top: 52vh; /* Margen superior del 5% de la altura de la ventana del navegador */
+  position: absolute;
+  left: 5vw; /* Posición a 5% del ancho de la ventana del navegador desde el lado izquierdo */
+}
+
+.img-draw2 {
+  max-width: 25vw; /* El 60% del ancho de la ventana del navegador */
+  width: 100%; /* Ancho completo */
+  margin-top: 50vh; /* Margen superior del 30% de la altura de la ventana del navegador */
+  position: absolute;
+  right: 5vw; /* Posición a 5% del ancho de la ventana del navegador desde el lado derecho */
+}
+
+.img-planify {
+  width: 120px;
   margin-bottom: 25px;
 }
+
 h2 {
   display: flex;
   max-width: 200px;
@@ -153,11 +175,11 @@ btn-login-one:hover {
 }
 .container-logIn {
   margin: 0 auto;
-  padding: 20px;
+  padding: 15px;
   display: flex;
   align-items: center;
   width: 380px;
-  height: 420px;
+  height: 450px;
   background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
@@ -171,11 +193,11 @@ btn-login-one:hover {
 }
 .container-register {
   margin: 0 auto;
-  padding: 20px;
+  padding: 15px;
   display: flex;
   align-items: center;
   width: 380px;
-  height: 420px;
+  height: 450px;
   background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
@@ -218,16 +240,25 @@ btn-login-one:hover {
   color: white;
 }
 
+@media only screen and (max-width: 950px) {
+  .img-draw2,
+  .img-draw1 {
+    display: none;
+  }
+}
 @media only screen and (max-width: 510px) {
+  .img-draw2,
+  .img-draw1 {
+    display: none;
+  }
   .container-register,
   .container-logIn {
-    margin-top: 100px;
+    margin-top: 70px;
     display: flex;
     align-items: center;
     max-width: 300px;
     width: 100%;
-    height: 400px;
-    gap: 8px;
+    height: 450px;
   }
 }
 </style>

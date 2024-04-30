@@ -112,6 +112,8 @@ h4 {
 .background-color {
   background-color: white;
   width: 100%;
+  border-radius: 20px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
 }
 .hero-image {
   position: absolute;
@@ -130,6 +132,7 @@ h4 {
 .container-card {
   display: flex;
   flex-direction: column;
+
 }
 .check-box {
   display: flex;
@@ -186,12 +189,13 @@ h4 {
 }
 /* Estilos para los container  Card*/
 .container-principal {
-  margin-top: 100px;
+  margin-top: 120px;
   padding: 20px;
   display: flex;
   flex-direction: row;
   width: 100%;
   width: 700px;
+
 }
 .container-card ::placeholder {
   padding-left: 10px;
@@ -230,7 +234,7 @@ h4 {
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
   color: white;
   font-weight: bold;
-  margin-top: 160px;
+  margin-top: 220px;
 }
 .btn-add:hover {
   background-color: rgb(42, 42, 176);

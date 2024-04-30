@@ -27,17 +27,19 @@ const toggleMenu = () => {
         <div class="container">
           <RouterLink to="/">Home</RouterLink>
           <RouterLink to="/tasks">Tasks</RouterLink>
+          <!-- <RouterLink to="/about">About</RouterLink> -->
           <RouterLink v-if="!user" to="/login">Login</RouterLink>
           <button v-else @click="logOut()" class="btn-log-out">Log Out</button>
         </div>
         <div class="nav-toggle">
           <button @click="toggleMenu">
             <font-awesome-icon icon="ellipsis-v" class="btn-mobile" />
+            <!-- <font-awesome-icon icon="fa-solid fa-bars" size="lg" style="color: #000081;" /> -->
           </button>
         </div>
         <!-- menú desplegable -->
         <div>
-          <h3 class="title-mobile">To-Do List</h3>
+          <img class="img-planify" src="../assets/logo-planify.svg" alt="Planify" />
           <ul class="nav-menu" :class="{ 'show-menu': isMenuOpen }">
             <li><RouterLink to="/">Home</RouterLink></li>
             <li><RouterLink to="/tasks">Tasks</RouterLink></li>
@@ -51,6 +53,14 @@ const toggleMenu = () => {
 </template>
 
 <style scoped>
+.img-planify {
+  max-width: 70px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 10px;
+  margin-left: 30px;
+}
 .title-mobile {
   display: none !important;
 }
@@ -67,7 +77,7 @@ const toggleMenu = () => {
 .navbar {
   background-color: white;
   opacity: 90%;
-  height: 55px;
+  height: 65px;
   position: absolute;
   top: 0;
   left: 0;
@@ -78,6 +88,7 @@ const toggleMenu = () => {
   align-items: center;
   justify-content: center;
   font-family: Arial, sans-serif;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
 }
 
 .btn-log-out {
@@ -85,12 +96,12 @@ const toggleMenu = () => {
   justify-content: center;
   align-content: center;
   border: none;
-  font-size: 14px;
+  font-size: 17px;
   position: absolute;
   right: 0;
   margin-right: 40px;
   padding: 7px;
-  color: rgba(243, 57, 10, 0.864);
+  color: rgba(70, 70, 70, 0.864);
   border-radius: 8px;
   font-weight: 600px;
   background-color: white;
@@ -127,6 +138,7 @@ nav {
   display: inline-block;
   padding: 0 2rem;
   border-left: 1px solid var(--color-border);
+  margin-left: 20px;
 }
 nav a:first-of-type {
   border: 0;
@@ -134,6 +146,9 @@ nav a:first-of-type {
 
 /***************************************/
 @media only screen and (min-width: 768px) {
+  .img-planify {
+    max-width: 70px;
+  }
   .title-mobile {
     display: none;
   }
@@ -158,27 +173,26 @@ nav a:first-of-type {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
   }
-  /*   .btn-log-out {
-    justify-content: center;
+   .btn-log-out {
+   
     align-content: center;
-    border: none;
-    background-color: rgba(218, 31, 31, 0.632);
-    font-size: 15px;
-    margin-right: 40px;
-    padding-top: 8px;
-    color: rgb(255, 255, 255);
-    border-radius: 5px;
-    font-weight: bold;
-  } */
+
+  } 
 }
 
 @media only screen and (max-width: 510px) {
-/*   .btn-mobile {
-    background-color: rgb(84, 84, 195); /* Cambia el color de fondo aquí 
-    font-size: 24px;
-  } */
+  .btn-mobile {
+    color: #0052cc;
+    font-size: 22px;
+    border: none;
+    
+  }
+
+  .img-planify {
+    max-width: 70px;
+  }
   .nav-toggle {
-    margin-left: 300px;
+    margin-left: 340px;
   }
   .nav-menu {
     display: none;

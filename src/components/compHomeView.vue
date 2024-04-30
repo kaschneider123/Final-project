@@ -20,9 +20,12 @@ onMounted(async () => {
 </script>
 
 <template>
+  <div class="container-planify">
+    <h1>Organize your day with Planify</h1>
+    <!-- <h1>Organize your day with</h1><img class="img-planify" src="../assets/planify2.svg" alt="Planify" /> -->
+  </div>
   <div class="container">
     <div class="container-list">
-      <h1>To-Do List</h1>
       <ul>
         <li><p>Prioritize tasks for focus.</p></li>
         <li><p>Check off completed tasks to stay motivated.</p></li>
@@ -39,11 +42,22 @@ onMounted(async () => {
 </template>
 
 <style scoped>
+.container-planify {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+}
+
 .container {
   background-color: rgba(255, 255, 255, 0.5);
   padding: 25px;
+  padding-left: 75px;
+  padding-right: 75px;
   border-radius: 25px;
   box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.5);
+  width: 100%;
 }
 .video-container {
   width: 100%;
@@ -58,11 +72,10 @@ onMounted(async () => {
   width: 100%;
 }
 h1 {
-  font-size: 48px;
+  font-size: 32px;
   font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 15px;
   color: rgb(0, 0, 129);
-  font-weight: bold;
 }
 ul {
   list-style-type: none;
@@ -96,8 +109,9 @@ a {
   border-radius: 10px;
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
   z-index: 1;
-  font-weight: bold;
-  font-size: 18px;
+  /* font-weight: bold; */
+  font-size: 16px;
+  align-content: center;
 }
 a:hover {
   background-color: rgb(42, 42, 176);
@@ -105,6 +119,12 @@ a:hover {
 
 /* Medias Queries*******************************************************/
 @media only screen and (max-width: 768px) {
+  .container-planify {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+  }
   .container-list {
     font-size: 15px;
     align-items: center;
@@ -113,12 +133,12 @@ a:hover {
   .container-list p {
     font-size: 16px;
   }
-  h1 {
-    font-size: 45px;
+
+  .container-planify h1 {
+    font-size: 26px;
     font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 15px;
+    padding-top: 150px;
     color: rgb(0, 0, 129);
-    font-weight: bold;
   }
   ul {
     margin-top: 0px;
@@ -129,16 +149,28 @@ a:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     height: 45px;
-    width: 200px;
+    width: 180px;
+    align-content: center;
   }
   .container {
-    margin-top: 150px;
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 
 @media only screen and (max-width: 418px) {
+  .container-planify {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+  }
+  .container-planify h1 {
+    font-size: 22px;
+  }
   .container {
-    margin-top: 100px;
+    /* margin-top: 100px; */
     width: 100%;
     height: 100%;
   }
@@ -151,16 +183,16 @@ a:hover {
     font-size: 13px;
   }
 
-  .container-list h1 {
-    font-size: 30px;
-  }
   a {
     position: absolute;
     top: 75% !important;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 45px;
-    width: 200px;
+    height: 40px;
+    width: 180px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    align-content: center;
   }
 }
 </style>

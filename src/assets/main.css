@@ -1,23 +1,26 @@
 @import './base.css';
 
+
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   font-weight: normal;
+  
 }
 
 a,
 .green {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  color:#0052cc;
   transition: 0.4s;
   padding: 3px;
 }
 
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+    /* background-color: hsla(160, 100%, 37%, 0.2); */
+    background-color: hsla(218, 100%, 37%, 0.113);
   }
 }
 
@@ -34,4 +37,14 @@ a,
     align-items: center;
     padding: 0 2rem;
   }
+
+/* @media only screen and (max-width: 500px) {
+  #app {
+    padding:  0;
+  background-color: white;
+  }
+  body {
+    background-color: white;
+  }
+} */
 }

@@ -1,11 +1,11 @@
 <script setup>
+import compHomeView from '@/components/compHomeView.vue'
+import compNavBar from '@/components/compNavBar.vue'
 </script>
 
 <template>
-	<main>
-		<h1>Home View!</h1>
-	</main>
+  <compNavBar />
+  <compHomeView />
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

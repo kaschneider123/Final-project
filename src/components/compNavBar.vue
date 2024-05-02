@@ -179,11 +179,9 @@ nav a:first-of-type {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
   }
-   .btn-log-out {
-   
+  .btn-log-out {
     align-content: center;
-
-  } 
+  }
 }
 
 @media only screen and (max-width: 510px) {
@@ -191,7 +189,6 @@ nav a:first-of-type {
     color: #0052cc;
     font-size: 22px;
     border: none;
-    
   }
 
   .img-planify {
@@ -234,6 +231,12 @@ nav a:first-of-type {
     top: 10px;
     left: 25px;
     justify-content: center;
+  }
+  .navbar a {
+    font-size: 15px;
+  }
+  .btn-log-out {
+    font-size: 15px;
   }
 }
 </style>

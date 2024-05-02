@@ -94,7 +94,9 @@ const emitFilter = (filter) => {
   justify-content: flex-end;
   border-radius: 5px;
   border: none;
-  background-color: rgba(32, 95, 242, 0.371);
+
+  background-color: rgba(241, 241, 241, 0.646);
+
   color: rgb(33, 33, 33);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
   cursor: pointer;
@@ -103,7 +105,8 @@ const emitFilter = (filter) => {
 .all-tasks:focus,
 .completed-tasks:focus,
 .pending-tasks:focus {
-  background-color: rgba(241, 241, 241, 0.646);
+  background-color: rgba(94, 139, 244, 0.371);
+  /*  background-color: rgba(241, 241, 241, 0.646); */
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -113,7 +116,6 @@ const emitFilter = (filter) => {
   background-color: rgba(247, 247, 247, 0.952);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
 }
-/**************** */
 
 @media only screen and (max-width: 510px) {
   .selection-bar {

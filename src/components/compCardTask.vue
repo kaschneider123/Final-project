@@ -132,7 +132,6 @@ h4 {
 .container-card {
   display: flex;
   flex-direction: column;
-
 }
 .check-box {
   display: flex;
@@ -195,7 +194,6 @@ h4 {
   flex-direction: row;
   width: 100%;
   width: 700px;
-
 }
 .container-card ::placeholder {
   padding-left: 10px;

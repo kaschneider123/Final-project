@@ -88,19 +88,19 @@ const _changeSignType = () => {
   display: flex;
 }
 .img-draw1 {
-  max-width: 25vw; /* El 50% del ancho de la ventana del navegador */
-  width: 100%; /* Ancho completo */
-  margin-top: 52vh; /* Margen superior del 5% de la altura de la ventana del navegador */
+  max-width: 25vw; 
+  width: 100%; 
+  margin-top: 52vh; 
   position: absolute;
-  left: 5vw; /* Posición a 5% del ancho de la ventana del navegador desde el lado izquierdo */
+  left: 5vw; 
 }
 
 .img-draw2 {
-  max-width: 25vw; /* El 60% del ancho de la ventana del navegador */
-  width: 100%; /* Ancho completo */
-  margin-top: 50vh; /* Margen superior del 30% de la altura de la ventana del navegador */
+  max-width: 25vw;
+  width: 100%; 
+  margin-top: 50vh; 
   position: absolute;
-  right: 5vw; /* Posición a 5% del ancho de la ventana del navegador desde el lado derecho */
+  right: 5vw; 
 }
 
 .img-planify {

@@ -76,13 +76,14 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 15px;
   color: rgb(0, 0, 129);
+  font-weight: bold;
 }
 ul {
   list-style-type: none;
   padding: 0;
 }
 li {
-  font-size: 19px;
+  font-size: 24px;
 }
 .video_background {
   position: absolute;
@@ -112,6 +113,7 @@ a {
   /* font-weight: bold; */
   font-size: 16px;
   align-content: center;
+  cursor: pointer;
 }
 a:hover {
   background-color: rgb(42, 42, 176);
@@ -131,7 +133,7 @@ a:hover {
     justify-content: center;
   }
   .container-list p {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .container-planify h1 {
@@ -139,17 +141,18 @@ a:hover {
     font-family: Arial, Helvetica, sans-serif;
     padding-top: 150px;
     color: rgb(0, 0, 129);
+    font-weight: bold;
   }
   ul {
     margin-top: 0px;
   }
   a {
     position: absolute;
-    top: 85%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 45px;
-    width: 180px;
+    width: 200px;
     align-content: center;
   }
   .container {
@@ -168,6 +171,8 @@ a:hover {
   }
   .container-planify h1 {
     font-size: 22px;
+    font-weight: bold;
+    align-items: center;
   }
   .container {
     /* margin-top: 100px; */
@@ -180,7 +185,7 @@ a:hover {
     justify-content: center;
   }
   .container-list p {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   a {
@@ -189,7 +194,7 @@ a:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     height: 40px;
-    width: 180px;
+    width: 200px;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     align-content: center;

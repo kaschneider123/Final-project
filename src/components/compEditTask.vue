@@ -76,6 +76,7 @@ const isDialogVisible = ref(false)
 
 .btn-save {
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .div-btns {
@@ -120,6 +121,7 @@ const isDialogVisible = ref(false)
   border: none;
   background-color: rgba(32, 95, 242, 0.371);
   color: rgb(20, 20, 20);
+  cursor: pointer;
 }
 
 .btn-delete {
@@ -130,6 +132,7 @@ const isDialogVisible = ref(false)
   border: none;
   background-color: rgba(32, 95, 242, 0.371);
   color: rgb(33, 33, 33);
+  cursor: pointer;
 }
 
 .btn-edit {
@@ -141,6 +144,7 @@ const isDialogVisible = ref(false)
   background-color: rgba(32, 95, 242, 0.371);
   color: rgb(33, 33, 33);
   justify-content: right;
+  cursor: pointer;
 }
 
 .btn-delete:hover {

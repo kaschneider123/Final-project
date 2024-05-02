@@ -48,6 +48,7 @@ button {
   background-color: rgba(32, 95, 242, 0.371);
   color: rgb(20, 20, 20);
   font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
 }
 
 .btn-no:hover {

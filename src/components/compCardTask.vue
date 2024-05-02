@@ -81,7 +81,7 @@ onMounted(() => {
 
 <style scoped>
 .container-card span {
-  font-size: 12px;
+  font-size: 14px;
 }
 .list-task {
   padding-left: 20px;
@@ -95,24 +95,25 @@ h4 {
   padding-bottom: 50px;
 }
 .container-card h3 {
-  font-size: 16px;
+  font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
   padding-top: 20px;
 }
 .container-card textarea {
-  width: 200px;
+  width: 220px;
   /* min-height: 70px; */
-  font-size: 12px;
+  font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 5px;
   border: none;
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
   padding-top: 10px;
+  padding-left: 15px;
 }
 .background-color {
   background-color: white;
   width: 100%;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
 }
 .hero-image {
@@ -197,11 +198,11 @@ h4 {
 }
 .container-card ::placeholder {
   padding-left: 10px;
-  font-size: 12px;
+  font-size: 13px;
   align-content: top;
 }
 .container-card input {
-  width: 200px;
+  width: 220px;
   display: flex;
   margin-top: 10px;
   margin-bottom: 30px;
@@ -209,9 +210,10 @@ h4 {
   border-radius: 5px;
   border: none;
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
+  padding-left: 15px;
 }
 .container-card h2 {
-  font-size: 18px;
+  font-size: 20px;
   color: rgb(0, 0, 129);
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
@@ -292,12 +294,14 @@ h4 {
     background-color: #0052cc;
     border: none;
     height: 35px;
-    width: 200px;
+    width: 220px;
     border-radius: 5px;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
     color: white;
     font-weight: bold;
     margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
   }
   .container-card h3 {
     font-size: 16px;
@@ -305,7 +309,7 @@ h4 {
   }
   .container-card textarea {
     width: 200px;
-    font-size: 12px;
+    font-size: 13px;
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 5px;
     border: none;
@@ -329,26 +333,46 @@ h4 {
   }
 }
 @media only screen and (max-width: 510px) {
+  /*  .background-color {
+    height: 100vh;
+    width: 100vh;
+  } */
+
+  body {
+    padding: 0;
+  }
+  .background-color {
+    background-color: #f2f2f2c4;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: none;
+  }
+  .hero-image {
+    display: none;
+  }
   .list-task {
-    padding: 8px;
+    padding: 12px;
   }
   .container-principal {
-    max-width: 350px;
+    max-width: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.5);
+    /*  background-color: rgb(255, 255, 255);  */
   }
+
   .container-card {
-    max-width: 350px;
+    max-width: 500px;
     width: 100%;
     flex-direction: column;
     height: 100%;
     display: flex;
     padding-left: 0px;
+    padding-right: 0px;
+    border-radius: 15px;
   }
   .container-card input {
-    max-width: 180px;
+    max-width: 230px;
     display: flex;
     height: 32px;
     /* width: 100%; */
@@ -357,16 +381,18 @@ h4 {
     background-color: #0052cc;
     border: none;
     height: 35px;
-    max-width: 180px;
+    max-width: 240px;
     width: 100%;
+    margin-top: 15px;
   }
   .container-card h3 {
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
   }
   .container-card textarea {
-    max-width: 180px;
-    font-size: 12px;
+    max-width: 220px;
+    font-size: 15px;
+
     /* width: 100%; */
   }
   .input-list {

@@ -53,6 +53,11 @@ const toggleMenu = () => {
 </template>
 
 <style scoped>
+.router-link-active {
+  background-color: rgba(241, 241, 241, 0.646);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
 .img-planify {
   max-width: 70px;
   position: absolute;
@@ -105,6 +110,7 @@ const toggleMenu = () => {
   border-radius: 8px;
   font-weight: 600px;
   background-color: white;
+  cursor: pointer;
 }
 .btn-log-out:hover {
   background-color: rgba(32, 95, 242, 0.646);
